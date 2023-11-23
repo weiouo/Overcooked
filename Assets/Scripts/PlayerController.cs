@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class PlayerController : MonoBehaviour
 {
     //Variable setting
-    private float speed = 20.0f ;       
-    private float turnSpeed = 25.0f ;
-    private float horizontalInput ;   
-    private float verticalInput ;
-    
+    private float horizontalInput;
+    private float verticalInput;
+    private float speed = 7.0f;
+    private float rotate_speed = 250.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,45 +19,29 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Get Input
-        horizontalInput = Input.GetAxis("Horizontal") ;
-        verticalInput = Input.GetAxis("Vertical") ;
+        Vector3 vector = new Vector3(0, 0, 0);
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            vector.z = -1;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            vector.z = 1;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            vector.x = 1;
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            vector.x = -1;
+        }
 
-        //Move
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
-
+        vector = vector.normalized;
+        transform.forward = Vector3.Slerp(transform.forward, vector, Time.deltaTime * speed);
     }
-    // private void CalculateInputDirection()
-    // {
-    //     var inputMovement = _moveAction.ReadValue<Vector2>();
-    //     if (inputMovement.x > 0.3f)
-    //     {
-    //         inputMovement.x = 1f;
-    //     }
-    //     else if (inputMovement.x < -0.3)
-    //     {
-    //         inputMovement.x = -1f;
-    //     }
-    //     else
-    //     {
-    //         inputMovement.x = 0f;
-    //     }
-
-    //     if (inputMovement.y > 0.3f)
-    //     {
-    //         inputMovement.y = 1f;
-    //     }
-    //     else if (inputMovement.y < -0.3f)
-    //     {
-    //         inputMovement.y = -1f;
-    //     }
-    //     else
-    //     {
-    //         inputMovement.y = 0f;
-    //     }
-
-    //     _inputDirection = new Vector3(inputMovement.x, 0f, inputMovement.y);
-    // }
-
 }
