@@ -4,44 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Variable setting
-    private float horizontalInput;
-    private float verticalInput;
-    private float speed = 7.0f;
-    private float rotate_speed = 250.0f;
+    [SerializeField] private GameInput gameInput;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float moveSpeed = 7.0f;
+    [SerializeField] private float rotate_speed = 25.0f;
+    private bool isWalking;
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 vector = new Vector3(0, 0, 0);
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
-            vector.z = -1;
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
-            vector.z = 1;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
-            vector.x = 1;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
-            vector.x = -1;
-        }
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector3 moveDir = new Vector3(-inputVector.x, 0, -inputVector.y);
+        transform.position += moveDir * moveSpeed * Time.deltaTime;
+        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotate_speed);
+        isWalking = moveDir != Vector3.zero;
 
-        vector = vector.normalized;
-        transform.forward = Vector3.Slerp(transform.forward, vector, Time.deltaTime * speed);
     }
 }
