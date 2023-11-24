@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3519626440732699925}
   - component: {fileID: 555041655225745561}
   - component: {fileID: 3701186185468524589}
-  m_Layer: 0
+  - component: {fileID: 4357912844067165649}
+  m_Layer: 6
   m_Name: crate_lettuce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3519626440732699925
 MeshFilter:
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0000002, y: 0.99805427, z: 2.0000048}
   m_Center: {x: 0.00000011920929, y: 0.49902517, z: -0.00000017881393}
+--- !u!114 &4357912844067165649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2733292070492679107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18a84db15ffe934eb63330ecc490070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterType: 1

@@ -67,4 +67,8 @@ public class Player : MonoBehaviour
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotate_speed);
         isWalking = moveDir != Vector3.zero;
     }
+    private void GetPlate()
+    {
+
+    }
 }

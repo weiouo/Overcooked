@@ -9930,7 +9930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611305ba2afa43a448737fce077fe92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 65
+  time: 120
   money: 0
   timeup: {fileID: 1079222757050320934}
   timeText: {fileID: 6179978647234238192}
@@ -10626,7 +10626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2126a3ab797f946851aa9dd0fdfb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 5
+  countdownTime: 1
   timeText: {fileID: 1079222757050320934}
   countdownUI: {fileID: 6078720098771450846}
   gameUI: {fileID: 936783487}
@@ -11772,7 +11772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &5675833849192137872
 CanvasRenderer:
   m_ObjectHideFlags: 0

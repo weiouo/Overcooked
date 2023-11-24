@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Counter : MonoBehaviour
+public class Dishrack : MonoBehaviour
 {
-    private enum counterTypes { Counter, Crate, Stove, Dishrack, Cuttingboard }
-    [SerializeField] private counterTypes counterType;
+    [SerializeField] private GameObject plate;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +16,9 @@ public class Counter : MonoBehaviour
     {
         
     }
-    public void Interact()
+    public void GeneratePlate()
     {
-        Debug.Log(counterType.ToString());
+        Instantiate(plate, this.transform.position + new Vector3(0, 3, 0), Quaternion.identity);
     }
+
 }
