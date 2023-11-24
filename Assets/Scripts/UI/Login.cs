@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class login_ui : MonoBehaviour
+public class Login : MonoBehaviour
 {
-    public void start()
+    public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("GameScene");
     }
-    public void map()
+    public void Map()
     {
 
     }
-    public void exit()
+    public void Exit()
     {
         Application.Quit();
     }

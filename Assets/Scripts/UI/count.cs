@@ -3,33 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class count : MonoBehaviour
+public class Count : MonoBehaviour
 {
-    public TextMeshProUGUI timetext;
-    public int num = 5;
-    public GameObject pausemenu;
-    public GameObject counting;
-    public GameObject money;
-    public GameObject time;
+    [SerializeField] private int countdownTime = 5;
+    [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private GameObject countdownUI;
+    [SerializeField] private GameObject gameUI;
     // Start is called before the first frame update
     void Start()
     {
-        pausemenu.SetActive(false);
-        money.SetActive(false);
-        time.SetActive(false);
-        counting.SetActive(true);
+        countdownUI.SetActive(true);
+        gameUI.SetActive(false);
         InvokeRepeating("timer", 1, 1);
     }
     public void timer()
     {
-        num--;
-        timetext.text = num + " ";
-        if (num == 0)
+        countdownTime--;
+        timeText.text = countdownTime + " ";
+        if (countdownTime == 0)
         {
             CancelInvoke("timer");
-            counting.SetActive(false);
-            money.SetActive(true);
-            time.SetActive(true);
+            countdownUI.SetActive(false);
+            gameUI.SetActive(true);
         }
     }
 

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
     }
+    //«öe°õ¦æInteract
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
