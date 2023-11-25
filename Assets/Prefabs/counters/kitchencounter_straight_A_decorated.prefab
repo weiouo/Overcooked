@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1887684986375300340}
   - component: {fileID: 3552957238950140930}
   - component: {fileID: 1385314256468276338}
-  - component: {fileID: -8127371414236450080}
   - component: {fileID: -7613551137874716130}
   m_Layer: 6
   m_Name: kitchencounter_straight_A_decorated
@@ -107,19 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0057693, y: 2.0951486, z: 2.2634335}
   m_Center: {x: -0.0028843887, y: 1.0475743, z: 0.13171652}
---- !u!114 &-8127371414236450080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8074226438815945498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18a84db15ffe934eb63330ecc490070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counterType: 3
 --- !u!114 &-7613551137874716130
 MonoBehaviour:
   m_ObjectHideFlags: 0

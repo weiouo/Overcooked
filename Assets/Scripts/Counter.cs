@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Counter : MonoBehaviour
 {
-    private enum counterTypes { Counter, Crate, Stove, Dishrack, Cuttingboard }
-    [SerializeField] private counterTypes counterType;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +15,8 @@ public class Counter : MonoBehaviour
     {
         
     }
-    public void Interact()
+    public virtual void Interact()
     {
-        Debug.Log(counterType.ToString());
+        Debug.Log("interact");
     }
 }
