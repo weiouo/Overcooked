@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKitchenObjectParent
 {
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask counterLayerMask;
     [SerializeField] private float moveSpeed = 7.0f;
     [SerializeField] private float rotate_speed = 25.0f;
     [SerializeField] private float interactDistance = 1f;
+    [SerializeField] private Transform holdpoint;
     private Vector3 interactDir;
     private bool isWalking;
+    private KitchenObject KitchenObject;
     private void Start()
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
@@ -31,9 +33,9 @@ public class Player : MonoBehaviour
         //Debug.DrawRay(transform.position, interactDir * interactDistance, Color.red);
         if (Physics.Raycast(transform.position, interactDir, out RaycastHit raycastHit, interactDistance, counterLayerMask))
         {
-            if (raycastHit.transform.TryGetComponent(out Counter counter))
+            if (raycastHit.transform.TryGetComponent(out BaseCounter basecounter))
             {
-                counter.Interact();
+                basecounter.Interact(this);
             }
         }
     }
@@ -70,5 +72,25 @@ public class Player : MonoBehaviour
     private void GetPlate()
     {
 
+    }
+    public Transform countertransform()
+    {
+        return holdpoint;
+    }
+    public void SetKichenObject(KitchenObject kitchenObject)
+    {
+        this.KitchenObject = kitchenObject;
+    }
+    public void ClearKitchenObject()
+    {
+        KitchenObject = null;
+    }
+    public KitchenObject ReturnKitchenObject()
+    {
+        return KitchenObject;
+    }
+    public bool HasKitchenObject()
+    {
+        return this.KitchenObject != null;
     }
 }
