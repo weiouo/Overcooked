@@ -4,34 +4,30 @@ using UnityEngine;
 
 public class KitchenObject : MonoBehaviour
 {
-    [SerializeField] private KichenObjectSO KichenObjectSO;
+    [SerializeField] private KichenObjectSO kichenObjectSO;
     private IKitchenObjectParent KitchenObjectParent;
 
-    public KichenObjectSO KichenObject_return(IKitchenObjectParent KitchenObjectParent)
+    public void SetKitchenObjectParent(IKitchenObjectParent _KitchenObjectParent)
     {
-        return KichenObjectSO;
-    }
-    //確認KitchenObject位置(位於哪個桌子上)
-    public void SetKitchenObjectParent(IKitchenObjectParent KitchenObjectParent)
-    {
-        if (this.KitchenObjectParent != null)
+        //先清空Parent東西資料
+        if (KitchenObjectParent != null)
         {
-            this.KitchenObjectParent.ClearKitchenObject();
+            KitchenObjectParent.ClearKitchenObject();
         }
-        this.KitchenObjectParent = KitchenObjectParent;
+
+        KitchenObjectParent = _KitchenObjectParent;
+        //Parent有東西
         if (KitchenObjectParent.HasKitchenObject())
         {
             Debug.LogError("Already had KitchenObject");
         }
+        //Parent沒東西
         else
         {
-            KitchenObjectParent.SetKichenObject(this);
-            transform.parent = KitchenObjectParent.countertransform();//更改KitchenObject的父物件 =哪張桌子
+            //給Parent東西
+            KitchenObjectParent.SetKitchenObject(this);
+            transform.parent = KitchenObjectParent.GetPoint();//更改KitchenObject的父物件 = 哪張桌子
             transform.localPosition = Vector3.zero;
         }
-    }
-    public IKitchenObjectParent ReturnCounter()
-    {
-        return KitchenObjectParent;
     }
 }

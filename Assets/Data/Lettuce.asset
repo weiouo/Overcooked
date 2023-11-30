@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d64fc489bc4344348a1492504d9cc720, type: 3}
-  m_Name: Lettuce
+  m_Script: {fileID: 11500000, guid: 55a4ee26edc21994c98d3aa93e3a07f8, type: 3}
+  m_Name: lettuce
   m_EditorClassIdentifier: 
-  itemName: Lettuce
-  ingredientPrefab: {fileID: 919132149155446097, guid: 9323464d74856d242be80af6bdb52a56, type: 3}
-  ingredient: {fileID: 599530405527473323, guid: 9323464d74856d242be80af6bdb52a56, type: 3}
-  ingredientChoped: {fileID: 287175947394519146, guid: 9821465e2e575a743a6f55f40c9dcf9c, type: 3}
-  ingredientSliced: {fileID: 4387450455345236887, guid: b3eab5a37f2a9ab40ba84942e616ea6c, type: 3}
+  prefab: {fileID: 7921663006100064187, guid: d49fa29f2f7b0534fa145319c8633daf, type: 3}
+  sprite: {fileID: 21300000, guid: c4edb6844d1ca1c4d993e8e4d5257c48, type: 3}
+  objectname: lettuce

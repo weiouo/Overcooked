@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class BaseCounter : MonoBehaviour,IKitchenObjectParent
 {
-    [SerializeField] private Transform countertop;
+    [SerializeField] private Transform topPoint;
     private KitchenObject KitchenObject;
-    public virtual void Interact(Player player)
+
+    //用BaseCounter連結Crate和ClearCounter的Interact功能
+    //override去執行兩者之一的Function
+    public virtual void Interact(Player player){}
+
+    //定義KitchenObjectParent介面
+    public Transform GetPoint()
     {
-        Debug.LogError("Basecounter interact!");
+        return topPoint;
     }
-    //用basecounter連結counter和clearcounter的Interact功能
-    //override去執行兩者之一的Interact
-    public Transform countertransform()
-    {
-        return countertop;
-    }
-    public void SetKichenObject(KitchenObject kitchenObject)
+    public void SetKitchenObject(KitchenObject kitchenObject)
     {
         this.KitchenObject = kitchenObject;
     }
@@ -24,7 +24,7 @@ public class BaseCounter : MonoBehaviour,IKitchenObjectParent
     {
         KitchenObject = null;
     }
-    public KitchenObject ReturnKitchenObject()
+    public KitchenObject GetKitchenObject()
     {
         return KitchenObject;
     }

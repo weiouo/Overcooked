@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18a84db15ffe934eb63330ecc490070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KichenObject: {fileID: 11400000, guid: de4aee345f8fcd646be3590fe32ab304, type: 2}
-  countertop: {fileID: 5661769977566360065}
+  topPoint: {fileID: 0}
+  KichenObjectSO: {fileID: 11400000, guid: de4aee345f8fcd646be3590fe32ab304, type: 2}
 --- !u!1 &4582261473852743456
 GameObject:
   m_ObjectHideFlags: 0

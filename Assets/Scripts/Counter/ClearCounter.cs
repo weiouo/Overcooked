@@ -6,20 +6,24 @@ public class ClearCounter : BaseCounter
 {
     public override void Interact(Player player)
     {
-        Debug.Log("interact");
+        //桌上沒東西
         if (!HasKitchenObject())
         {
+            //玩家有東西
             if (player.HasKitchenObject())
             {
                 //放食材
-                player.ReturnKitchenObject().SetKitchenObjectParent(this);
+                player.GetKitchenObject().SetKitchenObjectParent(this);
             }
         }
-        else 
+        //桌上有東西
+        else
         {
+            //玩家沒東西
             if (!player.HasKitchenObject())
             {
-                ReturnKitchenObject().SetKitchenObjectParent(player);
+                //拿食材
+                this.GetKitchenObject().SetKitchenObjectParent(player);
             }
         }
     }

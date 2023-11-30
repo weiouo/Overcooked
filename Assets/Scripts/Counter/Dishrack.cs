@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dishrack : Counter
+public class Dishrack : Crate
 {
     [SerializeField] private GameObject plate;
     // Start is called before the first frame update

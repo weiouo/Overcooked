@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
-public class Counter : BaseCounter
+public class Crate : BaseCounter
 {
     [SerializeField] private KichenObjectSO KichenObjectSO;
+
     public override void Interact(Player player)
     {
-        Debug.Log("interact");
+        //玩家沒東西
         if (!player.HasKitchenObject())
         {
-            Transform kitchenobject_transformation = Instantiate(KichenObjectSO.prefab);
-            kitchenobject_transformation.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
-            Debug.Log(kitchenobject_transformation.GetComponent<KitchenObject>().KichenObject_return(player).objectname);
+            //給玩家東西
+            KitchenObject kitchenObject = Instantiate(KichenObjectSO.prefab).GetComponent<KitchenObject>();
+            kitchenObject.SetKitchenObjectParent(player);
         }
+        //玩家有東西
         else
         {
             Debug.LogError("Already had KitchenObject");

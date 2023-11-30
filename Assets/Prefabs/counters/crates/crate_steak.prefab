@@ -150,5 +150,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18a84db15ffe934eb63330ecc490070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KichenObject: {fileID: 11400000, guid: d96d054c2c267384d82a61de24cad2a7, type: 2}
-  countertop: {fileID: 1505213370336228544}
+  topPoint: {fileID: 0}
+  KichenObjectSO: {fileID: 11400000, guid: d96d054c2c267384d82a61de24cad2a7, type: 2}
