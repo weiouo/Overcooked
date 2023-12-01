@@ -19,6 +19,13 @@ public class GameInput : MonoBehaviour
         playerInputControl.Player.Pause.performed += Pause_performed;
     }
 
+    private void OnDestroy()
+    {
+        // 在物件被銷毀時解除事件註冊
+        playerInputControl.Player.Interact.performed -= Interact_performed;
+        playerInputControl.Player.Pause.performed -= Pause_performed;
+    }
+
     private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         OnPauseAction?.Invoke(this, EventArgs.Empty);

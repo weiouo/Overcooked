@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "IngredientData", menuName = "IngredientData")]
-public class Ingredient : ScriptableObject
+[CreateAssetMenu()]
+public class IngredientSO : KichenObjectSO
 {
     public string itemName;
     public GameObject ingredientPrefab;
