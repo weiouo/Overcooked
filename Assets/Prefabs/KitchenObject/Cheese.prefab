@@ -96,6 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63a627e0386be84da502c2274f6b5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kichenObjectSO: {fileID: 0}
-  cuttingMeshes: []
-  panfriedMeshes: []
+  ingredientSO: {fileID: 11400000, guid: 2fdc53c9e6413604587b5faeabf85085, type: 2}
+  maxCutCount: 10
+  maxPanfriedTime: 5

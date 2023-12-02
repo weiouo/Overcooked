@@ -15,8 +15,8 @@ public class Cuttingboard : BaseCounter
             if (player.HasKitchenObject() & player.GetKitchenObject() is Ingredient)
             {
                 //放食材
-                player.GetKitchenObject().SetKitchenObjectParent(this);
                 ingredient = (Ingredient)player.GetKitchenObject();
+                player.GetKitchenObject().SetKitchenObjectParent(this);
             }
         }
         //桌上有東西
@@ -26,12 +26,17 @@ public class Cuttingboard : BaseCounter
             if (!player.HasKitchenObject())
             {
                 //拿食材
+                ingredient = null;
                 this.GetKitchenObject().SetKitchenObjectParent(player);
             }
         }
     }
     public override void Cut()
     {
-        Debug.Log("cut");
+        //有食材才能切
+        if (ingredient != null)
+        {
+            ingredient.Cut();
+        }
     }
 }

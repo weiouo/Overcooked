@@ -97,3 +97,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: 25f72a41d5f1dc7488174f9ab41ef65d, type: 2}
+  maxCutCount: 10
+  maxPanfriedTime: 5

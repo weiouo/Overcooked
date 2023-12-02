@@ -96,4 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63a627e0386be84da502c2274f6b5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientSO: {fileID: 0}
+  ingredientSO: {fileID: 11400000, guid: d96d054c2c267384d82a61de24cad2a7, type: 2}
+  maxCutCount: 10
+  maxPanfriedTime: 5
