@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu()]
-public class IngredientSO : KichenObjectSO
+public class IngredientSO : KitchenObjectSO
 {
     public List<Mesh> cuttingMeshes;
     private bool needCut;

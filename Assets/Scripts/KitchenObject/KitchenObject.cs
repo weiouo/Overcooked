@@ -5,7 +5,7 @@ using UnityEngine;
 public class KitchenObject : MonoBehaviour
 {
     private IKitchenObjectParent KitchenObjectParent;
-
+    //處理拿放
     public void SetKitchenObjectParent(IKitchenObjectParent _KitchenObjectParent)
     {
         //先清空Parent東西資料

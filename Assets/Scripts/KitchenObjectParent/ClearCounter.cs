@@ -12,7 +12,7 @@ public class ClearCounter : BaseCounter
             //玩家有東西
             if (player.HasKitchenObject())
             {
-                //放食材
+                //放東西
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
         }
@@ -22,7 +22,7 @@ public class ClearCounter : BaseCounter
             //玩家沒東西
             if (!player.HasKitchenObject())
             {
-                //拿食材
+                //拿東西
                 this.GetKitchenObject().SetKitchenObjectParent(player);
             }
         }

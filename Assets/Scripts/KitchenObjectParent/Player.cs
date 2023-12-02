@@ -57,6 +57,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
             }
         }
     }
+    //移動
     private void PlayerMovement()
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
@@ -70,7 +71,6 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotate_speed);
         isWalking = moveDir != Vector3.zero;
     }
-
     //定義KitchenObjectParent介面
     public Transform GetPoint()
     {
