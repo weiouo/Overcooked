@@ -5,6 +5,7 @@ using UnityEngine;
 public class KitchenObject : MonoBehaviour
 {
     private IKitchenObjectParent KitchenObjectParent;
+
     //³B²z®³©ñ
     public void SetKitchenObjectParent(IKitchenObjectParent _KitchenObjectParent)
     {

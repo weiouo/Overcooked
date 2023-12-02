@@ -6,8 +6,9 @@ public class BaseCounter : MonoBehaviour,IKitchenObjectParent
 {
     [SerializeField] private Transform topPoint;
     private KitchenObject KitchenObject;
-
+    //處理拿放
     public virtual void Interact(Player player){}
+    //處理切
     public virtual void Cut(){}
 
     //定義KitchenObjectParent介面
