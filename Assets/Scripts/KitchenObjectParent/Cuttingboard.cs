@@ -9,5 +9,8 @@ public class Cuttingboard : BaseCounter
         //基本上跟ClearCounter一樣
         //只是要判斷何者可以上切台
     }
-
+    public override void Cut()
+    {
+        Debug.Log("cut");
+    }
 }

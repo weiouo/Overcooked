@@ -16,6 +16,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     private void Start()
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
+        gameInput.OnCutAction += GameInput_OnCutAction;
     }
     void Update()
     {
@@ -36,6 +37,23 @@ public class Player : MonoBehaviour, IKitchenObjectParent
             if (raycastHit.transform.TryGetComponent(out BaseCounter basecounter))
             {
                 basecounter.Interact(this);
+            }
+        }
+    }
+    //«öf°õ¦æCut
+    private void GameInput_OnCutAction(object sender, System.EventArgs e)
+    {
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
+        if (moveDir != Vector3.zero)
+        {
+            interactDir = moveDir;
+        }
+        if (Physics.Raycast(transform.position, interactDir, out RaycastHit raycastHit, interactDistance, counterLayerMask))
+        {
+            if (raycastHit.transform.TryGetComponent(out BaseCounter basecounter))
+            {
+                basecounter.Cut();
             }
         }
     }

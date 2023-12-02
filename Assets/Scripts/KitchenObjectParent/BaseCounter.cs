@@ -10,6 +10,7 @@ public class BaseCounter : MonoBehaviour,IKitchenObjectParent
     //用BaseCounter連結Crate和ClearCounter的Interact功能
     //override去執行兩者之一的Function
     public virtual void Interact(Player player){}
+    public virtual void Cut(){}
 
     //定義KitchenObjectParent介面
     public Transform GetPoint()
