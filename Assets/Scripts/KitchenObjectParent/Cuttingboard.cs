@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Cuttingboard : BaseCounter
 {
-    [SerializeField] private List<IngredientSO> CanCutIngredientSO;
     private Ingredient ingredient;
     public override void Interact(Player player)
     {
@@ -15,7 +14,7 @@ public class Cuttingboard : BaseCounter
             if (player.HasKitchenObject() & player.GetKitchenObject() is Ingredient)
             {
                 //©ñ­¹§÷
-                ingredient = (Ingredient)player.GetKitchenObject();
+                ingredient = player.GetKitchenObject() as Ingredient;
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
         }

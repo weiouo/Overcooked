@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//紀錄每個食材的狀態
 public class Ingredient : KitchenObject
 {
     [SerializeField] private IngredientSO ingredientSO;
@@ -13,6 +14,7 @@ public class Ingredient : KitchenObject
     private bool needPanfried;
     private float maxPanfriedTime = 5.0f;
     private float panfriedTime = 0f;
+
     private MeshFilter ingredientMeshFilter;
     private bool isFinished = false;    // =true=>狀態對
     private void Start()
@@ -21,6 +23,10 @@ public class Ingredient : KitchenObject
         needPanfried = ingredientSO.panfriedMeshes.Count != 0;
         ingredientMeshFilter = this.gameObject.GetComponent<MeshFilter>();
         isFinished = !needCut && !needPanfried;
+    }
+    public bool IsProcessFinished()
+    {
+        return isFinished;
     }
     //紀錄切的次數
     public void Cut()
