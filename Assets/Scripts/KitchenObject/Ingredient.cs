@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Ingredient : KitchenObject
 {
-    private bool needCut;
+    [SerializeField] private IngredientSO ingredientSO;
+    private bool isFinished;
 }

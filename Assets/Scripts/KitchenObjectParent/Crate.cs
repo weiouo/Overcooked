@@ -5,16 +5,15 @@ using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCou
 
 public class Crate : BaseCounter
 {
-    [SerializeField] private KichenObjectSO KichenObjectSO;
-
+    [SerializeField] private GameObject prefab;
     public override void Interact(Player player)
     {
         //玩家沒東西
         if (!player.HasKitchenObject())
         {
             //給玩家東西
-            KitchenObject kitchenObject = Instantiate(KichenObjectSO.prefab).GetComponent<KitchenObject>();
-            kitchenObject.SetKitchenObjectParent(player);
+            Ingredient ingredient = Instantiate(prefab).GetComponent<Ingredient>();
+            ingredient.SetKitchenObjectParent(player);
         }
         //玩家有東西
         else

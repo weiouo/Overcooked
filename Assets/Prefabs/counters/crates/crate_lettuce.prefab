@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPoint: {fileID: 0}
-  KichenObjectSO: {fileID: 11400000, guid: de4aee345f8fcd646be3590fe32ab304, type: 2}
+  prefab: {fileID: 2234336151347590996, guid: d49fa29f2f7b0534fa145319c8633daf, type: 3}
 --- !u!1 &4582261473852743456
 GameObject:
   m_ObjectHideFlags: 0

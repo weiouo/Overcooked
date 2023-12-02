@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPoint: {fileID: 0}
-  KichenObjectSO: {fileID: 11400000, guid: d96d054c2c267384d82a61de24cad2a7, type: 2}
+  prefab: {fileID: 8420549098275118670, guid: 1abba1f7e9b52a646a553a2e76741e33, type: 3}

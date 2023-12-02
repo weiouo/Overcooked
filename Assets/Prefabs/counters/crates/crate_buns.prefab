@@ -65,7 +65,7 @@ Transform:
   m_Children:
   - {fileID: 1755004920046871875}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5663896045255095025
 MeshFilter:
@@ -150,5 +150,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18a84db15ffe934eb63330ecc490070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countertop: {fileID: 1755004920046871875}
-  KichenObjectSO: {fileID: 11400000, guid: fbefbd8b56885334fb1ababf2ca344d9, type: 2}
+  topPoint: {fileID: 0}
+  prefab: {fileID: 1900334919865734316, guid: 0bf555c407fd63b45bea795b31feb28c, type: 3}
