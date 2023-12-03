@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cuttingboard : BaseCounter
+public class CuttingCounter : BaseCounter
 {
     private Ingredient ingredient;
     public override void Interact(Player player)
