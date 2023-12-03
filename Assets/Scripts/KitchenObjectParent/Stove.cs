@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cuttingboard : BaseCounter
+public class Stove : BaseCounter
 {
     private Ingredient ingredient;
+    private void Update()
+    {
+        if (HasKitchenObject())
+        {
+            ingredient.Panfried();
+        }
+    }
     public override void Interact(Player player)
     {
         //桌上沒東西
@@ -13,9 +20,17 @@ public class Cuttingboard : BaseCounter
             //玩家有東西 & 該東西是食材
             if (player.HasKitchenObject() & player.GetKitchenObject() is Ingredient)
             {
-                //放食材
+                //獲取食材
                 ingredient = player.GetKitchenObject() as Ingredient;
-                player.GetKitchenObject().SetKitchenObjectParent(this);
+                //該東西可煎
+                if (ingredient.CanPanfried())
+                {
+                    player.GetKitchenObject().SetKitchenObjectParent(this);
+                }
+                else
+                {
+                    ingredient = null;
+                }
             }
         }
         //桌上有東西
@@ -28,14 +43,6 @@ public class Cuttingboard : BaseCounter
                 ingredient = null;
                 this.GetKitchenObject().SetKitchenObjectParent(player);
             }
-        }
-    }
-    public override void Cut()
-    {
-        //有食材才能切
-        if (ingredient != null && ingredient.CanCut())
-        {
-            ingredient.Cut();
         }
     }
 }
