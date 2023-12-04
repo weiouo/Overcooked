@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPoint: {fileID: 0}
-  KichenObjectSO: {fileID: 11400000, guid: fbefbd8b56885334fb1ababf2ca344d9, type: 2}
+  prefab: {fileID: 1900334919865734316, guid: 0bf555c407fd63b45bea795b31feb28c, type: 3}
 --- !u!1 &5594711734001277278
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,4 +351,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPoint: {fileID: 0}
-  KichenObjectSO: {fileID: 11400000, guid: fbefbd8b56885334fb1ababf2ca344d9, type: 2}
+  prefab: {fileID: 0}
