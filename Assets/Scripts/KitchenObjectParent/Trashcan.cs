@@ -8,7 +8,7 @@ public class Trashcan : BaseCounter
     {
         if (player.HasKitchenObject())
         {
-            player.GetKitchenObject().DestroySelf();
+            player.GetKitchenObject().DestroySelf(); 
         }
     }
 }

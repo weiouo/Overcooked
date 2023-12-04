@@ -19,7 +19,7 @@ public class KitchenObject : MonoBehaviour
         //Parent有東西
         if (KitchenObjectParent.HasKitchenObject())
         {
-            Debug.LogError("Already had KitchenObject");
+            Debug.Log("Already had KitchenObject");
         }
         //Parent沒東西
         else
@@ -28,6 +28,7 @@ public class KitchenObject : MonoBehaviour
             KitchenObjectParent.SetKitchenObject(this);
             transform.parent = KitchenObjectParent.GetPoint();//更改KitchenObject的父物件 = 哪張桌子
             transform.localPosition = Vector3.zero;
+            transform.rotation = Quaternion.identity;
         }
     }
     public void DestroySelf()

@@ -12,13 +12,8 @@ public class Crate : BaseCounter
         if (!player.HasKitchenObject())
         {
             //給玩家東西
-            Ingredient ingredient = Instantiate(prefab).GetComponent<Ingredient>();
-            ingredient.SetKitchenObjectParent(player);
-        }
-        //玩家有東西
-        else
-        {
-            Debug.LogError("Already had KitchenObject");
+            KitchenObject kitchenObject = Instantiate(prefab).GetComponent<KitchenObject>();
+            kitchenObject.SetKitchenObjectParent(player);
         }
     }
 }
