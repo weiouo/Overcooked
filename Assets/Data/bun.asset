@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55a4ee26edc21994c98d3aa93e3a07f8, type: 3}
-  m_Name: bun
+  m_Script: {fileID: 11500000, guid: d64fc489bc4344348a1492504d9cc720, type: 3}
+  m_Name: Bun
   m_EditorClassIdentifier: 
+  objectName: Bun
   prefab: {fileID: 299636763334608811, guid: 0bf555c407fd63b45bea795b31feb28c, type: 3}
   sprite: {fileID: 21300000, guid: 5ca29c8237ae6e0429e9bab2749b5df0, type: 3}
-  objectname: bun
+  cuttingMeshes: []
+  panfriedMeshes: []

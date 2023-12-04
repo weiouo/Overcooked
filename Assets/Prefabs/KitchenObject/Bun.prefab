@@ -96,4 +96,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63a627e0386be84da502c2274f6b5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kichenObjectSO: {fileID: 0}
+  ingredientSO: {fileID: 11400000, guid: fbefbd8b56885334fb1ababf2ca344d9, type: 2}

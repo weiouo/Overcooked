@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClearCounter : BaseCounter
@@ -12,7 +13,7 @@ public class ClearCounter : BaseCounter
             //玩家有東西
             if (player.HasKitchenObject())
             {
-                //放食材
+                //放東西
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
         }
@@ -22,8 +23,20 @@ public class ClearCounter : BaseCounter
             //玩家沒東西
             if (!player.HasKitchenObject())
             {
-                //拿食材
+                //拿東西
                 this.GetKitchenObject().SetKitchenObjectParent(player);
+            }
+            //玩家有東西
+            else
+            {
+                //玩家有盤子
+                if (player.GetKitchenObject() is Plate)
+                {
+                    //拿盤子裝食材
+                    Plate plate = player.GetKitchenObject() as Plate;
+                    Ingredient ingredient = this.GetKitchenObject() as Ingredient;
+                    plate.AddIngredient(ingredient);
+                }
             }
         }
     }
