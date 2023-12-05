@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80419a9875558a439bd29c35879a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: {fileID: 4600247238176943604}
+  counter: {fileID: 4714590537103446123}
   visualObject: {fileID: 7628033818941176062}
 --- !u!1 &2138045970179807650
 GameObject:
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 2364274827230446699}
   - component: {fileID: 3193531656698699252}
   - component: {fileID: 6646375531325163812}
-  - component: {fileID: 4600247238176943604}
+  - component: {fileID: 4714590537103446123}
   m_Layer: 6
   m_Name: kitchencounter_straight_decorated
   m_TagString: Untagged
@@ -79,6 +79,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6181600875990207652}
   - {fileID: 8911108298668112123}
   m_Father: {fileID: 0}
   m_RootOrder: -1
@@ -154,7 +155,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0000005, y: 1.9137545, z: 2.0419035}
   m_Center: {x: 2.9773886e-16, y: 0.95687723, z: 0.020952469}
---- !u!114 &4600247238176943604
+--- !u!114 &4714590537103446123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,11 +164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2138045970179807650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18a84db15ffe934eb63330ecc490070, type: 3}
+  m_Script: {fileID: 11500000, guid: ea7ffbe4e11ccf64fad08b2906dfb7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topPoint: {fileID: 0}
-  KichenObjectSO: {fileID: 0}
+  topPoint: {fileID: 6181600875990207652}
 --- !u!1 &7628033818941176062
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,4 +287,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPoint: {fileID: 0}
-  KichenObjectSO: {fileID: 0}
+  prefab: {fileID: 0}
+--- !u!1 &7710890640496771146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6181600875990207652}
+  m_Layer: 6
+  m_Name: topPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6181600875990207652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710890640496771146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.15, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5366086370949779451}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

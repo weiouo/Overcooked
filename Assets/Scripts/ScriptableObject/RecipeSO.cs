@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class RecipeSO : ScriptableObject
 {
-    public List<KichenObjectSO> ingredients;
+    public List<IngredientSO> ingredients;
 }

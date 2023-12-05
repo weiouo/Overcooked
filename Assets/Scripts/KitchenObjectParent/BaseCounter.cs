@@ -7,9 +7,10 @@ public class BaseCounter : MonoBehaviour,IKitchenObjectParent
     [SerializeField] private Transform topPoint;
     private KitchenObject KitchenObject;
 
-    //用BaseCounter連結Crate和ClearCounter的Interact功能
-    //override去執行兩者之一的Function
+    //處理拿放
     public virtual void Interact(Player player){}
+    //處理切
+    public virtual void Cut(){}
 
     //定義KitchenObjectParent介面
     public Transform GetPoint()
