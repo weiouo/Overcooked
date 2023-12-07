@@ -20,6 +20,8 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     [SerializeField] private float moveSpeed = 7.0f;
     [SerializeField] private float rotate_speed = 25.0f;
     [SerializeField] private float interactDistance = 1f;
+    [SerializeField] private GameObject knife;
+    [SerializeField] private GameObject particle;
     public  Animator animator;
     private Vector3 interactDir;
     private bool isWalking;
@@ -39,11 +41,14 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
         gameInput.OnCutAction += GameInput_OnCutAction;
+        CuttingCounter.CutBool += IfCutting;
     }
     void Update()
     {
         PlayerMovement();
         PlayerInteract();
+        IfWalk();
+        IfGetThing();
     }
 
     //按e執行Interact
@@ -129,14 +134,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotate_speed);
         isWalking = moveDir != Vector3.zero;
 
-        if (isWalking)
-        {
-            animator.SetBool("Walk", true);
-        }
-        else
-        {
-            animator.SetBool("Walk", false);
-        }
+        
     }
     //定義KitchenObjectParent介面
     public Transform GetPoint()
@@ -158,5 +156,51 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     public bool HasKitchenObject()
     {
         return this.KitchenObject != null;
+    }
+
+
+    //判斷Play狀態
+    private void IfCutting(bool isCutting)
+    {
+        if (isCutting)
+        {
+            animator.SetBool("Cut", true);
+            knife.SetActive(true);
+        }
+        else
+        {
+            animator.SetBool("Cut", false);
+            knife.SetActive(false);
+        }
+    }
+
+    private void IfGetThing()
+    {
+        if (this.HasKitchenObject())
+        {
+            animator.SetFloat("GetThing", 1f);
+            knife.SetActive(false);
+            animator.SetBool("Cut", false);
+        }
+        else
+        {
+            animator.SetFloat("GetThing", 0f);
+        }
+    }
+
+    private void IfWalk()
+    {
+        if (isWalking)
+        {
+            animator.SetFloat("Walk", 1f);
+            particle.SetActive(true);
+            knife.SetActive(false);
+            animator.SetBool("Cut", false);
+        }
+        else
+        {
+            animator.SetFloat("Walk", 0f);
+            particle.SetActive(false);
+        }
     }
 }

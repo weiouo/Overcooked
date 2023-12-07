@@ -1,36 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System;
 
-public class CuttingCounter : BaseCounter
+public class CuttingCounter : ClearCounter
 {
+    public delegate void CutEventHandler(bool isCutting);
+    public static event CutEventHandler CutBool;
     private Ingredient ingredient;
     public override void Interact(Player player)
     {
-        //®à¤W¨SªF¦è
+        //æ¡Œä¸Šæ²’æ±è¥¿
         if (!HasKitchenObject())
         {
-            //ª±®a¦³ªF¦è & ¸ÓªF¦è¬O­¹§÷
+            //ç©å®¶æœ‰æ±è¥¿ & è©²æ±è¥¿æ˜¯é£Ÿæ
             if (player.HasKitchenObject() & player.GetKitchenObject() is Ingredient)
             {
-                //©ñ­¹§÷
+                //æ”¾é£Ÿæ
                 ingredient = player.GetKitchenObject() as Ingredient;
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
         }
-        //®à¤W¦³ªF¦è
+        //æ¡Œä¸Šæœ‰æ±è¥¿
         else
         {
-            //ª±®a¨SªF¦è
+            //ç©å®¶æ²’æ±è¥¿
             if (!player.HasKitchenObject())
             {
-                //®³­¹§÷
+                //æ‹¿é£Ÿæ
                 ingredient = null;
                 this.GetKitchenObject().SetKitchenObjectParent(player);
             }
             else if (player.GetKitchenObject() is Plate && ingredient.IsProcessFinished())
             {
-                //®³½L¤l¸Ë­¹§÷
+                //æ‹¿ç›¤å­è£é£Ÿæ
                 Plate plate = player.GetKitchenObject() as Plate;
                 Ingredient ingredient = this.GetKitchenObject() as Ingredient;
                 if (plate.AddIngredient(ingredient))
@@ -42,10 +47,17 @@ public class CuttingCounter : BaseCounter
     }
     public override void Cut()
     {
-        //¦³­¹§÷¤~¯à¤Á
+        //è©¦åœ–ç²å–è©²é£Ÿæ
+        ingredient = this.GetKitchenObject() is Ingredient ? this.GetKitchenObject() as Ingredient : null;
+        //æœ‰é£Ÿææ‰èƒ½åˆ‡
         if (ingredient != null && ingredient.CanCut())
         {
             ingredient.Cut();
+            CutBool?.Invoke(true);
+        }
+        else
+        {
+            CutBool?.Invoke(false);
         }
     }
 }

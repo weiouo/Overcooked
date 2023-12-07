@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d64fc489bc4344348a1492504d9cc720, type: 3}
-  m_Name: Steak
+  m_Name: steak
   m_EditorClassIdentifier: 
   objectName: Steak
   prefab: {fileID: 7178024734488045756, guid: 1abba1f7e9b52a646a553a2e76741e33, type: 3}
