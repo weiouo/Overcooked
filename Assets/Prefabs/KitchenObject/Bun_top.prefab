@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8288942124510460180}
   - component: {fileID: -7705432958631637603}
   m_Layer: 0
-  m_Name: Bun
+  m_Name: Bun_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900334919865734316}
-  m_Mesh: {fileID: 4755037694683280153, guid: 462218761d8b5134e97d1512ad395aad, type: 3}
+  m_Mesh: {fileID: -1947637187042669421, guid: f474bf8e55d64f44a8cef48921f229ca, type: 3}
 --- !u!23 &8194339115570140087
 MeshRenderer:
   m_ObjectHideFlags: 0

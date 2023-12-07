@@ -24,6 +24,10 @@ public class Ingredient : KitchenObject
         ingredientMeshFilter = this.gameObject.GetComponent<MeshFilter>();
         isFinished = !needCut && !needPanfried;
     }
+    public IngredientSO GetIngredientSO()
+    {
+        return ingredientSO;
+    }
     public bool CanCut()
     {
         return needCut;

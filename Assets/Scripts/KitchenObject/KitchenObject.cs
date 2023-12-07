@@ -6,6 +6,8 @@ public class KitchenObject : MonoBehaviour
 {
     private IKitchenObjectParent KitchenObjectParent;
 
+    private Ingredient ingredient;
+
     //³B²z®³©ñ
     public void SetKitchenObjectParent(IKitchenObjectParent _KitchenObjectParent)
     {
