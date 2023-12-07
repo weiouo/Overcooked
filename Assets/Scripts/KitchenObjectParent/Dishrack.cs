@@ -7,42 +7,40 @@ public class Dishrack : BaseCounter
     [SerializeField] private GameObject prefab;
     [SerializeField] private int plateCount;
     [SerializeField] private float generateTime;
+    private List<GameObject> plates = new List<GameObject>();
     private GameObject plate;
-    private int count;
-    private float time;
+    private int plateIndex = 0;
+    private float time = 0f;
     public void Update()
     {
         time += Time.deltaTime;
         if (time >= generateTime)
         {
             time = 0;
-            if (count < plateCount)
+            if (plateIndex < plateCount)
             {
-                GeneratePlateVisual(count);
-                count++;
-            }
-            else
-            {
-                Debug.Log("full");
+                GeneratePlateVisual(plateIndex);
             }
         }
     }
-    private void GeneratePlateVisual(int plateIndex)
+    private void GeneratePlateVisual(int index)
     {
         Transform startPoint = GetPoint();
-        Vector3 offset = new Vector3(-0.25f * plateIndex, 0, 0);
+        Vector3 offset = new Vector3(-0.25f * index, 0, 0);
         plate = Instantiate(prefab, startPoint.position + offset, Quaternion.Euler(0, 0, 90));
+        plates.Add(plate);
+        plateIndex++;
     }
     public override void Interact(Player player)
     {
-        //玩家沒東西
-        if (!player.HasKitchenObject() && count != 0)
+        //玩家沒東西 && 有盤子
+        if (!player.HasKitchenObject() && plateIndex != 0)
         {
-            count--;
-            Destroy(plate);
-            //給玩家東西
-            KitchenObject kitchenObject = Instantiate(prefab).GetComponent<KitchenObject>();
-            kitchenObject.SetKitchenObjectParent(player);
+            plateIndex--;
+            plate = plates[plateIndex];
+            plates.Remove(plate);
+            //給玩家盤子
+            plate.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
         }
     }
 }

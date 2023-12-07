@@ -411,10 +411,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1959004592}
     m_Modifications:
-    - target: {fileID: 1513927510828820175, guid: 84de6ce9127f5b148a886f3730b3f777, type: 3}
-      propertyPath: plateCount
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3481416925701500295, guid: 84de6ce9127f5b148a886f3730b3f777, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -459,29 +455,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5754363849775282538, guid: 84de6ce9127f5b148a886f3730b3f777, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 7167654940589600446, guid: 84de6ce9127f5b148a886f3730b3f777, type: 3}
       propertyPath: m_Name
       value: PlateCounter
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604531051002758733, guid: 84de6ce9127f5b148a886f3730b3f777, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604531051002758733, guid: 84de6ce9127f5b148a886f3730b3f777, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604531051002758733, guid: 84de6ce9127f5b148a886f3730b3f777, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604531051002758733, guid: 84de6ce9127f5b148a886f3730b3f777, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
