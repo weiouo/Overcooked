@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System;
 
 public class CuttingCounter : BaseCounter
 {
     private Ingredient ingredient;
+    public delegate void CutEventHandler(bool isCutting);
+    public static event CutEventHandler CutBool;
+
     public override void Interact(Player player)
     {
         //桌上沒東西
@@ -36,6 +42,11 @@ public class CuttingCounter : BaseCounter
         if (ingredient != null && ingredient.CanCut())
         {
             ingredient.Cut();
+            CutBool?.Invoke(true);
+        }
+        else
+        {
+            CutBool?.Invoke(false);
         }
     }
 }
