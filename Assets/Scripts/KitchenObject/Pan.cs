@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pan : KitchenObject
+public class Pan : KitchenObject,IKitchenObjectParent
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform holdPoint;
+    private KitchenObject KitchenObject;
 
-    // Update is called once per frame
-    void Update()
+    //©w¸qKitchenObjectParent¤¶­±
+    public Transform GetPoint()
     {
-        
+        return holdPoint;
+    }
+    public void SetKitchenObject(KitchenObject kitchenObject)
+    {
+        this.KitchenObject = kitchenObject;
+    }
+    public void ClearKitchenObject()
+    {
+        KitchenObject = null;
+    }
+    public KitchenObject GetKitchenObject()
+    {
+        return KitchenObject;
+    }
+    public bool HasKitchenObject()
+    {
+        return this.KitchenObject != null;
     }
 }

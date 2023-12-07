@@ -28,6 +28,16 @@ public class CuttingCounter : BaseCounter
                 ingredient = null;
                 this.GetKitchenObject().SetKitchenObjectParent(player);
             }
+            else if (player.GetKitchenObject() is Plate && ingredient.IsProcessFinished())
+            {
+                //®³½L¤l¸Ë­¹§÷
+                Plate plate = player.GetKitchenObject() as Plate;
+                Ingredient ingredient = this.GetKitchenObject() as Ingredient;
+                if (plate.AddIngredient(ingredient))
+                {
+                    this.GetKitchenObject().DestroySelf();
+                }
+            }
         }
     }
     public override void Cut()
