@@ -106,14 +106,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6380742447862909488}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.7, z: -0.25}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.7, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3481416925701500295}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7167654940589600446
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPoint: {fileID: 5754363849775282538}
-  plate: {fileID: 7715372490908604846, guid: 7e1bbd6bfc533274d9e006f220941124, type: 3}
-  maxPlateCount: 4
-  spawnTime: 5
+  prefab: {fileID: 7715372490908604846, guid: 7e1bbd6bfc533274d9e006f220941124, type: 3}
+  plateCount: 4
+  generateTime: 5
