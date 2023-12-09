@@ -38,13 +38,13 @@ public class Stove : BaseCounter
         else
         {
             //玩家沒東西
-            if (!player.HasKitchenObject()&& !ingredient.IsProcessFinished())
+            if (!player.HasKitchenObject()&& !ingredient.IsComplete())
             {
                 //拿食材
                 ingredient = null;
                 GetKitchenObject().SetKitchenObjectParent(player);
             }
-            else if (player.GetKitchenObject() is Plate && ingredient.IsProcessFinished())
+            else if (player.GetKitchenObject() is Plate && ingredient.IsComplete())
             {
                 //拿盤子裝食材
                 Plate plate = player.GetKitchenObject() as Plate;

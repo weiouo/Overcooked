@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: fbefbd8b56885334fb1ababf2ca344d9, type: 2}
-  ProgressUI: {fileID: 573266624261723774}
-  colorPart: {fileID: 1751465483458563102}
+  progressUI: {fileID: 573266624261723774}
 --- !u!114 &-7705432958631637603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,10 +208,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressUI
       objectReference: {fileID: 0}
-    - target: {fileID: 6070341436272229465, guid: fc56f00b234398a4e9b04adf71c6a4d8, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -223,17 +218,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3391320396015078226, guid: fc56f00b234398a4e9b04adf71c6a4d8, type: 3}
   m_PrefabInstance: {fileID: 2946696779060550956}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1751465483458563102 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3506810459168100658, guid: fc56f00b234398a4e9b04adf71c6a4d8, type: 3}
-  m_PrefabInstance: {fileID: 2946696779060550956}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &2637328048966416163 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 899997514430687759, guid: fc56f00b234398a4e9b04adf71c6a4d8, type: 3}

@@ -98,8 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: d96d054c2c267384d82a61de24cad2a7, type: 2}
-  ProgressUI: {fileID: 7387242821038376757}
-  colorPart: {fileID: 8736438272003071317}
+  progressUI: {fileID: 7387242821038376757}
 --- !u!1001 &5302040621102926951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,14 +210,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3391320396015078226, guid: fc56f00b234398a4e9b04adf71c6a4d8, type: 3}
   m_PrefabInstance: {fileID: 5302040621102926951}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8736438272003071317 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3506810459168100658, guid: fc56f00b234398a4e9b04adf71c6a4d8, type: 3}
-  m_PrefabInstance: {fileID: 5302040621102926951}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
