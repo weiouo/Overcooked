@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //紀錄每個食材的狀態
 public class Ingredient : KitchenObject
 {
     [SerializeField] private IngredientSO ingredientSO;
+    [SerializeField] private GameObject ProgressUI;
+    [SerializeField] private Image colorPart;
     //切
     private bool needCut;
     private int maxCutCount = 10;
@@ -23,6 +26,9 @@ public class Ingredient : KitchenObject
         needPanfried = ingredientSO.panfriedMeshes.Count != 0;
         ingredientMeshFilter = this.gameObject.GetComponent<MeshFilter>();
         isFinished = !needCut && !needPanfried;
+        //UI
+        ProgressUI.SetActive(false);
+        colorPart.fillAmount = 0f;
     }
     public IngredientSO GetIngredientSO()
     {
@@ -45,9 +51,11 @@ public class Ingredient : KitchenObject
     public void Cut()
     {
         cutCount++;
+        colorPart.fillAmount = (float)cutCount / maxCutCount;
         //切好
         if (cutCount >= maxCutCount)
         {
+            ProgressUI.SetActive(false);
             needCut = false;
             isFinished = !needCut && !needPanfried;
             ingredientMeshFilter.mesh = ingredientSO.cuttingMeshes[2];
@@ -60,6 +68,7 @@ public class Ingredient : KitchenObject
         //還沒切
         else
         {
+            ProgressUI.SetActive(true);
             ingredientMeshFilter.mesh = ingredientSO.cuttingMeshes[0];
         }
     }
@@ -67,6 +76,7 @@ public class Ingredient : KitchenObject
     public void Panfried()
     {
         panfriedTime += Time.deltaTime;
+        colorPart.fillAmount = panfriedTime / maxPanfriedTime;
         //焦
         if (panfriedTime >= 2 * maxPanfriedTime)
         {
@@ -77,6 +87,7 @@ public class Ingredient : KitchenObject
         //熟
         else if (panfriedTime >= maxPanfriedTime)
         {
+            ProgressUI.SetActive(false);
             needPanfried = false;
             isFinished = !needCut && !needPanfried;
             ingredientMeshFilter.mesh = ingredientSO.panfriedMeshes[1];
@@ -84,6 +95,7 @@ public class Ingredient : KitchenObject
         //生
         else
         {
+            ProgressUI.SetActive(true);
             ingredientMeshFilter.mesh = ingredientSO.panfriedMeshes[0];
         }
     }

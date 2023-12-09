@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1205789079844525165}
   - component: {fileID: 5236729101183136008}
   - component: {fileID: 4770905974062779885}
-  - component: {fileID: -829208559518067123}
   m_Layer: 0
   m_Name: Cheese_slice
   m_TagString: Untagged
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-829208559518067123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8154345826473712704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b63a627e0386be84da502c2274f6b5d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredientSO: {fileID: 11400000, guid: 2fdc53c9e6413604587b5faeabf85085, type: 2}

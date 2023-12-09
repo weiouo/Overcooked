@@ -12695,6 +12695,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1959004592}
     m_Modifications:
+    - target: {fileID: 547757056735940069, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547757056735940069, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2138045970179807650, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
       propertyPath: m_Name
       value: kitchencounter_straight_decorated
@@ -12741,6 +12749,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5366086370949779451, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211919395040997132, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011086658585087655, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445228866901994537, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673264768910028958, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12883,6 +12907,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1959004592}
     m_Modifications:
+    - target: {fileID: 547757056735940069, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547757056735940069, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 727
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 409
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.28232288
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.28232288
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.28232288
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.0000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.61237246
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3535534
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.61237246
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.3535534
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -57.000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 580063097090065872, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100.00339
+      objectReference: {fileID: 0}
     - target: {fileID: 2138045970179807650, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
       propertyPath: m_Name
       value: kitchencounter_straight_decorated
@@ -12929,6 +13017,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5366086370949779451, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211919395040997132, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555651703550760129, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 7555651703550760129, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_RenderMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011086658585087655, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445228866901994537, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673264768910028958, guid: 32e11e295e1445a46bc7cc68c1f8e2c6, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
