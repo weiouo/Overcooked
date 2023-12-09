@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //紀錄每個食材的狀態
 public class Ingredient : KitchenObject
 {
     [SerializeField] private IngredientSO ingredientSO;
+    [SerializeField] private GameObject progressUI;
+    private MeshFilter ingredientMeshFilter;
+    private Progress progress;
     //切
     private bool needCut;
     private int maxCutCount = 10;
@@ -15,17 +19,71 @@ public class Ingredient : KitchenObject
     private float maxPanfriedTime = 5.0f;
     private float panfriedTime = 0f;
 
-    private MeshFilter ingredientMeshFilter;
-    private bool isFinished = false;    // =true=>狀態對
     private void Start()
     {
+        progressUI.SetActive(false);
         needCut = ingredientSO.cuttingMeshes.Count != 0;
         needPanfried = ingredientSO.panfriedMeshes.Count != 0;
         ingredientMeshFilter = this.gameObject.GetComponent<MeshFilter>();
-        isFinished = !needCut && !needPanfried;
+        progress = progressUI.GetComponent<Progress>();
+    }
+    //紀錄切的次數
+    public void Cut()
+    {
+        progressUI.SetActive(true);
+        progress.SetColorFillAmount((float)cutCount / maxCutCount);
+        cutCount++;
+        //切好
+        if (cutCount >= maxCutCount)
+        {
+            progressUI.SetActive(false);
+            needCut = false;
+            SetMesh(ingredientSO.cuttingMeshes[2]);
+        }
+        //切到一半
+        else if (cutCount >= maxCutCount / 2)
+        {
+            SetMesh(ingredientSO.cuttingMeshes[1]);
+        }
+        //還沒切
+        else
+        {
+            SetMesh(ingredientSO.cuttingMeshes[0]);
+        }
+    }
+    //紀錄煎的秒數
+    public void Panfried()
+    {
+        progressUI.SetActive(true);
+        progress.SetColorFillAmount((panfriedTime / maxPanfriedTime) % 1.0f);
+        panfriedTime += Time.deltaTime;
+        //焦
+        if (panfriedTime >= 2 * maxPanfriedTime)
+        {
+            progressUI.SetActive(false);
+            needPanfried = true;
+            SetMesh(ingredientSO.panfriedMeshes[2]);
+        }
+        //熟
+        else if (panfriedTime > maxPanfriedTime)
+        {
+            progress.SwitchToWarnColor();
+            needPanfried = false;
+            SetMesh(ingredientSO.panfriedMeshes[1]);
+        }
+        //生
+        else
+        {
+            SetMesh(ingredientSO.panfriedMeshes[0]);
+        }
+    }
+    public IngredientSO GetIngredientSO()
+    {
+        return ingredientSO;
     }
     public bool CanCut()
     {
+        //需要切
         return needCut;
     }
     public bool CanPanfried()
@@ -33,55 +91,12 @@ public class Ingredient : KitchenObject
         //切好且需要煎
         return !needCut && needPanfried;
     }
-    public bool IsProcessFinished()
+    public bool IsComplete()
     {
-        return isFinished;
+        return !needCut && !needPanfried;
     }
-    //紀錄切的次數
-    public void Cut()
+    private void SetMesh(Mesh mesh)
     {
-        cutCount++;
-        //切好
-        if (cutCount >= maxCutCount)
-        {
-            needCut = false;
-            isFinished = !needCut && !needPanfried;
-            ingredientMeshFilter.mesh = ingredientSO.cuttingMeshes[2];
-        }
-        //切到一半
-        else if (cutCount >= maxCutCount / 2)
-        {
-            ingredientMeshFilter.mesh = ingredientSO.cuttingMeshes[1];
-        }
-        //還沒切
-        else
-        {
-            ingredientMeshFilter.mesh = ingredientSO.cuttingMeshes[0];
-        }
+        ingredientMeshFilter.mesh = mesh;
     }
-    //紀錄煎的秒數
-    public void Panfried()
-    {
-        panfriedTime += Time.deltaTime;
-        //焦
-        if (panfriedTime >= 2 * maxPanfriedTime)
-        {
-            needPanfried = true;
-            isFinished = !needCut && !needPanfried;
-            ingredientMeshFilter.mesh  = ingredientSO.panfriedMeshes[2];
-        }
-        //熟
-        else if (panfriedTime >= maxPanfriedTime)
-        {
-            needPanfried = false;
-            isFinished = !needCut && !needPanfried;
-            ingredientMeshFilter.mesh = ingredientSO.panfriedMeshes[1];
-        }
-        //生
-        else
-        {
-            ingredientMeshFilter.mesh = ingredientSO.panfriedMeshes[0];
-        }
-    }
-    //紀錄是否完成
 }

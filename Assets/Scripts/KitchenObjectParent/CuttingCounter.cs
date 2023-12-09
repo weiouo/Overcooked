@@ -5,40 +5,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
 
-public class CuttingCounter : BaseCounter
+public class CuttingCounter : ClearCounter
 {
-    private Ingredient ingredient;
     public delegate void CutEventHandler(bool isCutting);
     public static event CutEventHandler CutBool;
-
-    public override void Interact(Player player)
-    {
-        //®à¤W¨SªF¦è
-        if (!HasKitchenObject())
-        {
-            //ª±®a¦³ªF¦è & ¸ÓªF¦è¬O­¹§÷
-            if (player.HasKitchenObject() & player.GetKitchenObject() is Ingredient)
-            {
-                //©ñ­¹§÷
-                ingredient = player.GetKitchenObject() as Ingredient;
-                player.GetKitchenObject().SetKitchenObjectParent(this);
-            }
-        }
-        //®à¤W¦³ªF¦è
-        else
-        {
-            //ª±®a¨SªF¦è
-            if (!player.HasKitchenObject())
-            {
-                //®³­¹§÷
-                ingredient = null;
-                this.GetKitchenObject().SetKitchenObjectParent(player);
-            }
-        }
-    }
+    private Ingredient ingredient;
+   
     public override void Cut()
     {
-        //¦³­¹§÷¤~¯à¤Á
+        //è©¦åœ–ç²å–è©²é£Ÿæ
+        ingredient = this.GetKitchenObject() is Ingredient ? this.GetKitchenObject() as Ingredient : null;
+        //æœ‰é£Ÿææ‰èƒ½åˆ‡
         if (ingredient != null && ingredient.CanCut())
         {
             ingredient.Cut();

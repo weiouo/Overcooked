@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stove : BaseCounter
 {
     private Ingredient ingredient;
+
     private void Update()
     {
         if (HasKitchenObject())
@@ -14,7 +15,7 @@ public class Stove : BaseCounter
     }
     public override void Interact(Player player)
     {
-        //桌上沒東西
+        //鍋子沒東西
         if (!HasKitchenObject())
         {
             //玩家有東西 & 該東西是食材
@@ -33,15 +34,25 @@ public class Stove : BaseCounter
                 }
             }
         }
-        //桌上有東西
+        //鍋子有東西
         else
         {
             //玩家沒東西
-            if (!player.HasKitchenObject())
+            if (!player.HasKitchenObject()&& !ingredient.IsComplete())
             {
                 //拿食材
                 ingredient = null;
-                this.GetKitchenObject().SetKitchenObjectParent(player);
+                GetKitchenObject().SetKitchenObjectParent(player);
+            }
+            else if (player.GetKitchenObject() is Plate && ingredient.IsComplete())
+            {
+                //拿盤子裝食材
+                Plate plate = player.GetKitchenObject() as Plate;
+                Ingredient ingredient = GetKitchenObject() as Ingredient;
+                if (plate.AddIngredient(ingredient))
+                {
+                    GetKitchenObject().DestroySelf();
+                }
             }
         }
     }
