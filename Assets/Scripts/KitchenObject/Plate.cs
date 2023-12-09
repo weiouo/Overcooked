@@ -12,7 +12,6 @@ public class Plate : KitchenObject
     { 
         public IngredientSO ingredientSO; 
     }
-
     private List<string> ingredients;
     public void Start()
     {
@@ -44,9 +43,8 @@ public class Plate : KitchenObject
         }
         return false;
     }
-
-    public void ClearIngredient()
-    {
-        ingredients.Clear();
-    }
+    //public void ClearIngredient()
+    //{
+    //    ingredients.Clear();
+    //}
 }
