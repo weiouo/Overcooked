@@ -5,54 +5,75 @@ using UnityEngine;
 public class Stove : BaseCounter
 {
     private Ingredient ingredient;
-
+    [SerializeField] private GameObject prefab;
+    private void Start()
+    {
+        KitchenObject kitchenObject = Instantiate(prefab).GetComponent<KitchenObject>();
+        kitchenObject.SetKitchenObjectParent(this);
+    }
     private void Update()
     {
-        if (HasKitchenObject())
+        if (GetKitchenObject() is Pan)
         {
-            ingredient.Panfried();
+            Pan pan = GetKitchenObject() as Pan;
+            Ingredient ingredient = pan.GetKitchenObject() as Ingredient;
+            if (pan.HasKitchenObject())
+            {
+                ingredient.Panfried();
+            }
         }
     }
     public override void Interact(Player player)
     {
-        //Áç¤l¨SªF¦è
-        if (!HasKitchenObject())
+        if (HasKitchenObject())
         {
-            //ª±®a¦³ªF¦è & ¸ÓªF¦è¬O­¹§÷
-            if (player.HasKitchenObject() & player.GetKitchenObject() is Ingredient)
+            Pan pan = GetKitchenObject() as Pan;
+            if (!pan.HasKitchenObject())
             {
-                //Àò¨ú­¹§÷
-                ingredient = player.GetKitchenObject() as Ingredient;
-                //¸ÓªF¦è¥i·Î
-                if (ingredient.CanPanfried())
+                if (player.HasKitchenObject() & player.GetKitchenObject() is Ingredient)
                 {
-                    player.GetKitchenObject().SetKitchenObjectParent(this);
+                    //ç²å–é£Ÿæ
+                    ingredient = player.GetKitchenObject() as Ingredient;
+                    //è©²æ±è¥¿å¯ç…
+                    if (ingredient.CanPanfried())
+                    {
+                        player.GetKitchenObject().SetKitchenObjectParent(pan);
+                    }
+                    else
+                    {
+                        ingredient = null;
+                    }
                 }
-                else
+                else if (!player.HasKitchenObject())
                 {
-                    ingredient = null;
+                    pan.SetKitchenObjectParent(player);
+                }
+            }
+            else
+            {
+                //ç©å®¶æ²’æ±è¥¿
+                if (!player.HasKitchenObject())
+                {
+                    pan.SetKitchenObjectParent(player);
+                }
+                else if (player.GetKitchenObject() is Plate && ingredient.IsProcessFinished())
+                {
+                    //æ‹¿ç›¤å­è£é£Ÿæ
+                    Plate plate = player.GetKitchenObject() as Plate;
+                    Ingredient ingredient = pan.GetKitchenObject() as Ingredient;
+                    if (plate.AddIngredient(ingredient))
+                    {
+                        pan.GetKitchenObject().DestroySelf();
+                    }
                 }
             }
         }
-        //Áç¤l¦³ªF¦è
         else
         {
-            //ª±®a¨SªF¦è
-            if (!player.HasKitchenObject()&& !ingredient.IsComplete())
+            if (player.GetKitchenObject() is Pan)
             {
-                //®³­¹§÷
-                ingredient = null;
-                GetKitchenObject().SetKitchenObjectParent(player);
-            }
-            else if (player.GetKitchenObject() is Plate && ingredient.IsComplete())
-            {
-                //®³½L¤l¸Ë­¹§÷
-                Plate plate = player.GetKitchenObject() as Plate;
-                Ingredient ingredient = GetKitchenObject() as Ingredient;
-                if (plate.AddIngredient(ingredient))
-                {
-                    GetKitchenObject().DestroySelf();
-                }
+                Pan pan = player.GetKitchenObject() as Pan;
+                pan.SetKitchenObjectParent(this);
             }
         }
     }
