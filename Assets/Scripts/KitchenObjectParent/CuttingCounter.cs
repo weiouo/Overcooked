@@ -38,6 +38,11 @@ public class CuttingCounter : BaseCounter
                     this.GetKitchenObject().DestroySelf();
                 }
             }
+            else if (player.GetKitchenObject() is Pan && ingredient.CanPanfried()) 
+            {
+                Pan pan = player.GetKitchenObject() as Pan;
+                this.GetKitchenObject().SetKitchenObjectParent(pan);
+            }
         }
     }
     public override void Cut()

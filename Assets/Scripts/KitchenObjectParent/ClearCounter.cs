@@ -23,8 +23,28 @@ public class ClearCounter : BaseCounter
             //玩家沒東西
             if (!player.HasKitchenObject())
             {
-                //拿東西
-                this.GetKitchenObject().SetKitchenObjectParent(player);
+                if (GetKitchenObject() is Pan)
+                {
+                    Pan pan = GetKitchenObject() as Pan;
+                    if (!pan.HasKitchenObject())
+                    {
+                        pan.SetKitchenObjectParent(player);
+                    }
+                    else
+                    {
+                        Ingredient ingredient = pan.GetKitchenObject() as Ingredient;
+                        if (!ingredient.IsProcessFinished())
+                        {
+                            pan.GetKitchenObject().SetKitchenObjectParent(player);
+                        }
+                    }
+
+                }
+                else
+                {
+                    //拿東西
+                    this.GetKitchenObject().SetKitchenObjectParent(player);
+                }
             }
             //玩家有東西
             else
@@ -32,15 +52,32 @@ public class ClearCounter : BaseCounter
                 //玩家有盤子
                 if (player.GetKitchenObject() is Plate)
                 {
-                    //拿盤子裝食材
                     Plate plate = player.GetKitchenObject() as Plate;
-                    Ingredient ingredient = this.GetKitchenObject() as Ingredient;
-                    if (plate.AddIngredient(ingredient))
+                    if (GetKitchenObject() is Pan)
                     {
-                        this.GetKitchenObject().DestroySelf();
+                        Pan pan = GetKitchenObject() as Pan;
+                        if (pan.HasKitchenObject())
+                        {
+                            Ingredient ingredient = pan.GetKitchenObject() as Ingredient;
+                            if (ingredient.IsProcessFinished())
+                            {
+                                if (plate.AddIngredient(ingredient))
+                                {
+                                    pan.GetKitchenObject().DestroySelf();
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Ingredient ingredient = GetKitchenObject() as Ingredient;
+                        if (plate.AddIngredient(ingredient))
+                        {
+                            this.GetKitchenObject().DestroySelf();
+                        }
                     }
                 }
-                else if (this.GetKitchenObject() is Plate)
+                else if (this.GetKitchenObject() is Plate && player.GetKitchenObject() is Ingredient)
                 {
                     Plate plate = this.GetKitchenObject() as Plate;
                     Ingredient ingredient = player.GetKitchenObject() as Ingredient;
