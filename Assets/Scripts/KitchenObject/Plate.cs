@@ -13,6 +13,7 @@ public class Plate : KitchenObject
         public IngredientSO ingredientSO; 
     }
     private List<string> ingredients;
+    private Ingredient ingredient_return;
     public void Start()
     {
         ingredients = new List<string>();
@@ -24,6 +25,7 @@ public class Plate : KitchenObject
         {
             if (ingredient.GetIngredientSO().objectName == "Bun")
             {
+                ingredient_return = ingredient;
                 ingredients.Add(ingredient.GetIngredientSO().objectName);
                 OnIngredientAdd?.Invoke(this, new OnIngredientAddEventArgs
                 {
@@ -33,6 +35,7 @@ public class Plate : KitchenObject
             }
             else if (ingredients.Contains("Bun"))
             {
+                ingredient_return = ingredient;
                 ingredients.Add(ingredient.GetIngredientSO().objectName);
                 OnIngredientAdd?.Invoke(this, new OnIngredientAddEventArgs
                 {
@@ -43,8 +46,18 @@ public class Plate : KitchenObject
         }
         return false;
     }
+
+    public Ingredient GetIngredient()
+    {
+        return ingredient_return;
+    }
+
+    public List<string> GetIngredientList()
+    {
+        return ingredients;
+    } 
     //public void ClearIngredient()
     //{
-    //    ingredients.Clear();
+    //    ingredients.Clear(); 
     //}
 }
