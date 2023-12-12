@@ -33,7 +33,7 @@ public class CuttingCounter : ClearCounter
                 ingredient = null;
                 this.GetKitchenObject().SetKitchenObjectParent(player);
             }
-            else if (player.GetKitchenObject() is Plate && ingredient.IsProcessFinished())
+            else if (player.GetKitchenObject() is Plate && ingredient.IsComplete())
             {
                 //���L�l�˭���
                 Plate plate = player.GetKitchenObject() as Plate;
