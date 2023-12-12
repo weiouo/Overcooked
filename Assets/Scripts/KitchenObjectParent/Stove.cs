@@ -32,9 +32,9 @@ public class Stove : BaseCounter
             {
                 if (player.HasKitchenObject() & player.GetKitchenObject() is Ingredient)
                 {
-                    //Àò¨ú­¹§÷
+                    //ç²å–é£Ÿæ
                     ingredient = player.GetKitchenObject() as Ingredient;
-                    //¸ÓªF¦è¥i·Î
+                    //è©²æ±è¥¿å¯ç…
                     if (ingredient.CanPanfried())
                     {
                         player.GetKitchenObject().SetKitchenObjectParent(pan);
@@ -51,14 +51,14 @@ public class Stove : BaseCounter
             }
             else
             {
-                //ª±®a¨SªF¦è
+                //ç©å®¶æ²’æ±è¥¿
                 if (!player.HasKitchenObject())
                 {
                     pan.SetKitchenObjectParent(player);
                 }
                 else if (player.GetKitchenObject() is Plate && ingredient.IsProcessFinished())
                 {
-                    //®³½L¤l¸Ë­¹§÷
+                    //æ‹¿ç›¤å­è£é£Ÿæ
                     Plate plate = player.GetKitchenObject() as Plate;
                     Ingredient ingredient = pan.GetKitchenObject() as Ingredient;
                     if (plate.AddIngredient(ingredient))

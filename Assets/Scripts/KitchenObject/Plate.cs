@@ -12,7 +12,6 @@ public class Plate : KitchenObject
     { 
         public IngredientSO ingredientSO; 
     }
-
     private List<string> ingredients;
     public void Start()
     {
@@ -21,7 +20,7 @@ public class Plate : KitchenObject
     public bool AddIngredient(Ingredient ingredient)
     {
         //同樣食材只能裝一次 && 是已完成的食材
-        if (!ingredients.Contains(ingredient.GetIngredientSO().objectName) && ingredient.IsProcessFinished())
+        if (!ingredients.Contains(ingredient.GetIngredientSO().objectName) && ingredient.IsComplete())
         {
             if (ingredient.GetIngredientSO().objectName == "Bun")
             {
@@ -44,9 +43,8 @@ public class Plate : KitchenObject
         }
         return false;
     }
-
-    public void ClearIngredient()
-    {
-        ingredients.Clear();
-    }
+    //public void ClearIngredient()
+    //{
+    //    ingredients.Clear();
+    //}
 }
