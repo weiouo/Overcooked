@@ -8,10 +8,12 @@ using UnityEngine.Rendering;
 public class Plate : KitchenObject
 {
     public event EventHandler <OnIngredientAddEventArgs> OnIngredientAdd;
+    public event EventHandler<IngredientClearEventArgs> IngredientClear;
     public class OnIngredientAddEventArgs : EventArgs 
     { 
-        public IngredientSO ingredientSO; 
+        public IngredientSO ingredientSO;
     }
+    public class IngredientClearEventArgs : EventArgs {}
 
     private List<string> ingredients;
     public void Start()
@@ -48,5 +50,6 @@ public class Plate : KitchenObject
     public void ClearIngredient()
     {
         ingredients.Clear();
+        IngredientClear?.Invoke(this, new IngredientClearEventArgs {});
     }
 }
