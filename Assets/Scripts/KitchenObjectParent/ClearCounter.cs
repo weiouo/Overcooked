@@ -33,7 +33,7 @@ public class ClearCounter : BaseCounter
                     else
                     {
                         Ingredient ingredient = pan.GetKitchenObject() as Ingredient;
-                        if (!ingredient.IsProcessFinished())
+                        if (!ingredient.IsComplete())
                         {
                             pan.GetKitchenObject().SetKitchenObjectParent(player);
                         }
@@ -59,7 +59,7 @@ public class ClearCounter : BaseCounter
                         if (pan.HasKitchenObject())
                         {
                             Ingredient ingredient = pan.GetKitchenObject() as Ingredient;
-                            if (ingredient.IsProcessFinished())
+                            if (ingredient.IsComplete())
                             {
                                 if (plate.AddIngredient(ingredient))
                                 {

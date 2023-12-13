@@ -14,19 +14,20 @@ public class Plate : KitchenObject
         public IngredientSO ingredientSO;
     }
     public class IngredientClearEventArgs : EventArgs {}
-
     private List<string> ingredients;
+    private Ingredient ingredient_return;
     public void Start()
     {
         ingredients = new List<string>();
     }
     public bool AddIngredient(Ingredient ingredient)
     {
-        //¦P¼Ë­¹§÷¥u¯à¸Ë¤@¦¸ && ¬O¤w§¹¦¨ªº­¹§÷
-        if (!ingredients.Contains(ingredient.GetIngredientSO().objectName) && ingredient.IsProcessFinished())
+        //åŒæ¨£é£Ÿæåªèƒ½è£ä¸€æ¬¡ && æ˜¯å·²å®Œæˆçš„é£Ÿæ
+        if (!ingredients.Contains(ingredient.GetIngredientSO().objectName) && ingredient.IsComplete())
         {
             if (ingredient.GetIngredientSO().objectName == "Bun")
             {
+                ingredient_return = ingredient;
                 ingredients.Add(ingredient.GetIngredientSO().objectName);
                 OnIngredientAdd?.Invoke(this, new OnIngredientAddEventArgs
                 {
@@ -36,6 +37,7 @@ public class Plate : KitchenObject
             }
             else if (ingredients.Contains("Bun"))
             {
+                ingredient_return = ingredient;
                 ingredients.Add(ingredient.GetIngredientSO().objectName);
                 OnIngredientAdd?.Invoke(this, new OnIngredientAddEventArgs
                 {
@@ -47,9 +49,19 @@ public class Plate : KitchenObject
         return false;
     }
 
-    public void ClearIngredient()
+    public Ingredient GetIngredient()
     {
         ingredients.Clear();
         IngredientClear?.Invoke(this, new IngredientClearEventArgs {});
+        return ingredient_return;
     }
+
+    public List<string> GetIngredientList()
+    {
+        return ingredients;
+    } 
+    //public void ClearIngredient()
+    //{
+    //    ingredients.Clear(); 
+    //}
 }
