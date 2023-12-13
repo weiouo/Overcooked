@@ -86,6 +86,19 @@ public class ClearCounter : BaseCounter
                         player.GetKitchenObject().DestroySelf();
                     }
                 }
+                else if (player.GetKitchenObject() is Pan && this.GetKitchenObject() is Plate)
+                {
+                    Pan pan = player.GetKitchenObject() as Pan;
+                    Plate plate = this.GetKitchenObject() as Plate;
+                    if (pan.HasKitchenObject()) 
+                    {
+                        Ingredient ingredient = pan.GetKitchenObject() as Ingredient;
+                        if (plate.AddIngredient(ingredient))
+                        {
+                            pan.GetKitchenObject().DestroySelf();
+                        }
+                    }
+                }
             }
         }
     }
