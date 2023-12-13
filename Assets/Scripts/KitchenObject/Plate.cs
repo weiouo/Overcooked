@@ -11,7 +11,7 @@ public class Plate : KitchenObject
     public event EventHandler<IngredientClearEventArgs> IngredientClear;
     public class OnIngredientAddEventArgs : EventArgs 
     { 
-        public IngredientSO ingredientSO; 
+        public IngredientSO ingredientSO;
     }
     public class IngredientClearEventArgs : EventArgs { }
 
@@ -24,7 +24,6 @@ public class Plate : KitchenObject
     }
     public bool AddIngredient(Ingredient ingredient)
     {
-        //同樣食材只能裝一次 && 是已完成的食材
         if (!ingredients.Contains(ingredient.GetIngredientSO()) && ingredient.IsComplete())
         {
             if (ingredient.GetIngredientSO().objectName == "Bun")
@@ -53,6 +52,8 @@ public class Plate : KitchenObject
 
     public Ingredient GetIngredient()
     {
+        ingredients.Clear();
+        IngredientClear?.Invoke(this, new IngredientClearEventArgs {});
         return ingredient_return;
     }
 
