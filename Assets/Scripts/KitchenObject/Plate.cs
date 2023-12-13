@@ -8,10 +8,12 @@ using UnityEngine.Rendering;
 public class Plate : KitchenObject
 {
     public event EventHandler <OnIngredientAddEventArgs> OnIngredientAdd;
+    public event EventHandler<IngredientClearEventArgs> IngredientClear;
     public class OnIngredientAddEventArgs : EventArgs 
     { 
-        public IngredientSO ingredientSO; 
+        public IngredientSO ingredientSO;
     }
+    public class IngredientClearEventArgs : EventArgs {}
     private List<string> ingredients;
     private Ingredient ingredient_return;
     public void Start()
@@ -20,7 +22,7 @@ public class Plate : KitchenObject
     }
     public bool AddIngredient(Ingredient ingredient)
     {
-        //¦P¼Ë­¹§÷¥u¯à¸Ë¤@¦¸ && ¬O¤w§¹¦¨ªº­¹§÷
+        //åŒæ¨£é£Ÿæåªèƒ½è£ä¸€æ¬¡ && æ˜¯å·²å®Œæˆçš„é£Ÿæ
         if (!ingredients.Contains(ingredient.GetIngredientSO().objectName) && ingredient.IsComplete())
         {
             if (ingredient.GetIngredientSO().objectName == "Bun")
@@ -49,6 +51,8 @@ public class Plate : KitchenObject
 
     public Ingredient GetIngredient()
     {
+        ingredients.Clear();
+        IngredientClear?.Invoke(this, new IngredientClearEventArgs {});
         return ingredient_return;
     }
 

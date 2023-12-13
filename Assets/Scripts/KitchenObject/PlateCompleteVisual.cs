@@ -17,6 +17,15 @@ public class PlateCompleteVisual : MonoBehaviour
     private void Start()
     {
         plate.OnIngredientAdd += Plate_OnIngredientAdd;
+        plate.IngredientClear += Plate_IngredientClear;
+        foreach (IngredientSO_GameObject ingredientSO_GameObject in IngredientSOGameObjectsList)
+        {
+            ingredientSO_GameObject.GameObject.SetActive(false);
+        }
+    }
+
+    private void Plate_IngredientClear(object sender, Plate.IngredientClearEventArgs e)
+    {
         foreach (IngredientSO_GameObject ingredientSO_GameObject in IngredientSOGameObjectsList)
         {
             ingredientSO_GameObject.GameObject.SetActive(false);
