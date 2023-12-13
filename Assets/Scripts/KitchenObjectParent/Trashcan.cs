@@ -8,7 +8,21 @@ public class Trashcan : BaseCounter
     {
         if (player.HasKitchenObject())
         {
-            player.GetKitchenObject().DestroySelf(); 
+            if (player.GetKitchenObject() is Ingredient)
+            {
+                player.GetKitchenObject().DestroySelf();
+            }
+            else if (player.GetKitchenObject() is Pan)
+            {
+                Pan pan = player.GetKitchenObject() as Pan;
+                pan.GetKitchenObject().DestroySelf();
+            }
+            else if (player.GetKitchenObject() is Plate)
+            {
+                Plate plate = player.GetKitchenObject() as Plate;
+                plate.ClearIngredient();
+            }
         }
     }
 }
+

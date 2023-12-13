@@ -8,35 +8,39 @@ using UnityEngine.Rendering;
 public class Plate : KitchenObject
 {
     public event EventHandler <OnIngredientAddEventArgs> OnIngredientAdd;
+    public event EventHandler<IngredientClearEventArgs> IngredientClear;
     public class OnIngredientAddEventArgs : EventArgs 
     { 
         public IngredientSO ingredientSO; 
     }
-    private List<string> ingredients;
+    public class IngredientClearEventArgs : EventArgs { }
+
+    [SerializeField] private IngredientSO bun;
+    private List<IngredientSO> ingredients;
     private Ingredient ingredient_return;
     public void Start()
     {
-        ingredients = new List<string>();
+        ingredients = new List<IngredientSO>();
     }
     public bool AddIngredient(Ingredient ingredient)
     {
         //同樣食材只能裝一次 && 是已完成的食材
-        if (!ingredients.Contains(ingredient.GetIngredientSO().objectName) && ingredient.IsComplete())
+        if (!ingredients.Contains(ingredient.GetIngredientSO()) && ingredient.IsComplete())
         {
             if (ingredient.GetIngredientSO().objectName == "Bun")
             {
                 ingredient_return = ingredient;
-                ingredients.Add(ingredient.GetIngredientSO().objectName);
+                ingredients.Add(ingredient.GetIngredientSO());
                 OnIngredientAdd?.Invoke(this, new OnIngredientAddEventArgs
                 {
                     ingredientSO = ingredient.GetIngredientSO()
                 });
                 return true;
             }
-            else if (ingredients.Contains("Bun"))
+            else if (ingredients.Contains(bun))
             {
                 ingredient_return = ingredient;
-                ingredients.Add(ingredient.GetIngredientSO().objectName);
+                ingredients.Add(ingredient.GetIngredientSO());
                 OnIngredientAdd?.Invoke(this, new OnIngredientAddEventArgs
                 {
                     ingredientSO = ingredient.GetIngredientSO()
@@ -52,12 +56,13 @@ public class Plate : KitchenObject
         return ingredient_return;
     }
 
-    public List<string> GetIngredientList()
+    public List<IngredientSO> GetIngredientList()
     {
         return ingredients;
     } 
-    //public void ClearIngredient()
-    //{
-    //    ingredients.Clear(); 
-    //}
+    public void ClearIngredient()
+    {
+        ingredients.Clear();
+        IngredientClear?.Invoke(this, new IngredientClearEventArgs { });
+    }
 }
