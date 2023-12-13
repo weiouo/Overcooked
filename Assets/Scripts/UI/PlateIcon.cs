@@ -17,9 +17,16 @@ public class PlateIcon : MonoBehaviour
     void Start()
     {
         plate.OnIngredientAdd += Plate_OnIngredientAdded;
+        plate.IngredientClear += Plate_IngredientClear;
     }
 
-    private void Plate_OnIngredientAdded(object sender , Plate.OnIngredientAddEventArgs e) {
+    private void Plate_IngredientClear(object sender, Plate.IngredientClearEventArgs e)
+    {
+        VisualIconUIClear();
+    }
+
+    private void Plate_OnIngredientAdded(object sender , Plate.OnIngredientAddEventArgs e) 
+    {
         VisualIconUI();
     }
 
@@ -34,5 +41,13 @@ public class PlateIcon : MonoBehaviour
         Transform icontransform = Instantiate(Icon, transform);
         icontransform.gameObject.SetActive(true);
         icontransform.GetComponent<PlateIconSingle>().GetKitchenObjectIcon(ingredient.GetIngredientSO()); 
+    }
+    private void VisualIconUIClear()
+    {
+        foreach(Transform Child in transform)
+        {
+           if (Child == Icon) { continue; }
+            Destroy(Child.gameObject);
+        }
     }
 }
