@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6a1fa4870222646a91bda9d5a88572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlateIconUI: {fileID: 5948264438295168676}
+  bun: {fileID: 11400000, guid: fbefbd8b56885334fb1ababf2ca344d9, type: 2}
 --- !u!1 &8717572127967775462
 GameObject:
   m_ObjectHideFlags: 0
