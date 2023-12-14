@@ -52,8 +52,6 @@ public class Plate : KitchenObject
 
     public Ingredient GetIngredient()
     {
-        ingredients.Clear();
-        IngredientClear?.Invoke(this, new IngredientClearEventArgs {});
         return ingredient_return;
     }
 
