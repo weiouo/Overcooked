@@ -5,21 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GameInputManager : InputManager
 {
-    [SerializeField] private UIManager uiManager;
-    public override void Start()
-    {
-        base.Start();
-        GameInitialize();
-    }
+    [SerializeField] private PanelController panelController;
     public void GameInitialize()
     {
-        uiManager.ShowReadyGoPanel();
+        panelController.ShowReadyGoPanel();
         Time.timeScale = 1f;
     }
     public void GameStart()
     {
-        uiManager.ShowGamePanel();
+        panelController.ShowGamePanel();
         Time.timeScale = 1f;
+    }
+    public void GameTimesUp()
+    {
+        panelController.ShowTimesUpPanel();
+    }
+    public void GameEnd()
+    {
+        panelController.ShowEndPanel();
+        Time.timeScale = 0f;
     }
     public void GameRestart()
     {
@@ -27,12 +31,13 @@ public class GameInputManager : InputManager
     }
     public void GamePause()
     {
-        uiManager.ShowPausePanel();
+        panelController.ShowPausePanel();
         Time.timeScale = 0f;
     }
     public void GameResume()
     {
-        uiManager.HidePausePanel();
+        panelController.HidePausePanel();
         Time.timeScale = 1f;
     }
+    
 }

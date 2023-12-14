@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class LevelDataSO : ScriptableObject
 {
-    public int levelTime;
+    public float levelTime;
     public List<int> levelScores;
 }

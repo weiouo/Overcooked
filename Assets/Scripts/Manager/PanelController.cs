@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class PanelController : MonoBehaviour
 {
     [SerializeField] private GameObject readyGoPanel;
     [SerializeField] private GameObject gamePanel;
+    [SerializeField] private GameObject timesUpPanel;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject pausePanel;
     public void ShowReadyGoPanel()
@@ -17,6 +18,10 @@ public class UIManager : MonoBehaviour
     {
         HideAllPanel();
         gamePanel.SetActive(true);
+    }
+    public void ShowTimesUpPanel()
+    {
+        timesUpPanel.SetActive(true);
     }
     public void ShowEndPanel()
     {
