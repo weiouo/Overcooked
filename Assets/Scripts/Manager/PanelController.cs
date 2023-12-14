@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PanelController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PanelController : MonoBehaviour
     [SerializeField] private GameObject timesUpPanel;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private UnityEvent setupEndPanel;
     public void ShowReadyGoPanel()
     {
         HideAllPanel();
@@ -27,6 +29,7 @@ public class PanelController : MonoBehaviour
     {
         HideAllPanel();
         endPanel.SetActive(true);
+        setupEndPanel.Invoke();
     }
     public void ShowPausePanel()
     {

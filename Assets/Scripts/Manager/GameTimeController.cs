@@ -10,10 +10,6 @@ public class GameTimeController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private UnityEvent timesUp;
     private float time;
-    public void SetTimeText(float time)
-    {
-        timeText.text = Mathf.Ceil(time).ToString();
-    }
     private void Start()
     {
         time = levelDataSO.levelTime;
@@ -26,5 +22,9 @@ public class GameTimeController : MonoBehaviour
         {
             timesUp.Invoke();
         }
+    }
+    public void SetTimeText(float time)
+    {
+        timeText.text = Mathf.Ceil(time).ToString();
     }
 }
