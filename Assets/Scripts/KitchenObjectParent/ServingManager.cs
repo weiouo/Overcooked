@@ -46,9 +46,9 @@ public class ServingManager : MonoBehaviour
                 foreach(IngredientSO ingredientSO in recipeSO.ingredients)
                 {
                     bool ingredientFound = false;
-                    foreach(string ingredient in plate.GetIngredientList())
+                    foreach(IngredientSO ingredient in plate.GetIngredientList())
                     {
-                        if(ingredient == ingredientSO.objectName)
+                        if(ingredient == ingredientSO)
                         {
                             ingredientFound = true;
                             break;
