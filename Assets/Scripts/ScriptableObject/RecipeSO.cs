@@ -7,5 +7,7 @@ using UnityEngine;
 public class RecipeSO : ScriptableObject
 {
     public List<IngredientSO> ingredients;
+    public Sprite RecipeFoodSprite;
     public string recipeName;
+    public string recipeChineseName;
 }
