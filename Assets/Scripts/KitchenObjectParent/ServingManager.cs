@@ -1,17 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.VFX;
 
 public class ServingManager : MonoBehaviour
 {
+    public event EventHandler RecipeSpawn;
+    public event EventHandler RecipeComplete;
     public static ServingManager Instance { get; private set; }
 
     [SerializeField] private RecipeSOList recipeListSO;
+    [SerializeField] private TextMeshProUGUI title;
     private List<RecipeSO> waitrecipeSOList; //待完成菜單
-    private float generateRecipeTimer;
+    private float generateRecipeTimer = 2f;
     private float generateRecipeMaxTimer = 5f;
-    private int waitRecipeMax = 4;
+    private int waitRecipeMax = 3;
 
     private void Awake()
     {
@@ -28,16 +33,19 @@ public class ServingManager : MonoBehaviour
             //若菜單還沒達最大數量則新增菜單
             if(waitrecipeSOList.Count < waitRecipeMax)
             {
-                RecipeSO waitrecipe = recipeListSO.recipeSOList[Random.Range(0, recipeListSO.recipeSOList.Count)];
-                Debug.Log(waitrecipe.recipeName);
+                title.text = "待完成菜單...";
+                RecipeSO waitrecipe = recipeListSO.recipeSOList[UnityEngine.Random.Range(0, recipeListSO.recipeSOList.Count)];
+                //Debug.Log(waitrecipe.recipeName);
                 waitrecipeSOList.Add(waitrecipe);
+
+                RecipeSpawn?.Invoke(this, EventArgs.Empty);
             }
         }
     }
 
     public void ServingRecipeCorrect(Plate plate)
     {
-        bool allwrong = true;
+       // bool allwrong = true;
         for (int i = 0; i < waitrecipeSOList.Count; i++) { 
             RecipeSO recipeSO = waitrecipeSOList[i];
 
@@ -62,17 +70,23 @@ public class ServingManager : MonoBehaviour
 
                 if (deliverCorrect)
                 {
-                    allwrong = false;
-                    Debug.Log("Player delivered the correct recipe!");
+                    if(waitrecipeSOList.Count <= 0)
+                    {
+                        title.text = "等待訂單中";
+                    }
+                    //allwrong = false;
+                    //Debug.Log("Player delivered the correct recipe!");
                     waitrecipeSOList.RemoveAt(i);
+                    RecipeComplete?.Invoke(this, EventArgs.Empty);
+                    
                     return;
                 }
             }
         }
+    }
 
-        if (allwrong)
-        {
-            Debug.Log("YOU ARE STUPID!!!!!!!!");
-        }
+    public List<RecipeSO> GetWaitRecipeSOList()
+    {
+        return waitrecipeSOList;
     }
 }
