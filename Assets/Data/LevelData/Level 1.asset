@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376c8f91a18d2834da8f1f5ee32b6cae, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  levelTime: 5
+  levelTime: 60
   levelScores: 3200000064000000c8000000
