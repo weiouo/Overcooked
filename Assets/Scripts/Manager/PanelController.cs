@@ -10,6 +10,7 @@ public class PanelController : MonoBehaviour
     [SerializeField] private GameObject timesUpPanel;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject tutorialPanel;
     [SerializeField] private UnityEvent setupEndPanel;
     public void ShowReadyGoPanel()
     {
@@ -39,11 +40,20 @@ public class PanelController : MonoBehaviour
     {
         pausePanel.SetActive(false) ;
     }
+    public void HideTutorialPanel()
+    {
+        tutorialPanel.SetActive(false);
+    }
+    public void ShowTutorialPanel()
+    {
+        tutorialPanel.SetActive(true);
+    }
     public void HideAllPanel()
     {
         readyGoPanel.SetActive(false);
         gamePanel.SetActive(false);
         endPanel.SetActive(false);
         pausePanel.SetActive(false);
+        tutorialPanel.SetActive(false);
     }
 }

@@ -39,5 +39,14 @@ public class GameInputManager : InputManager
         panelController.HidePausePanel();
         Time.timeScale = 1f;
     }
-    
+    public void GameTutorialOn()
+    {
+        panelController.ShowTutorialPanel();
+        Time.timeScale = 0f;
+    }
+    public void GameTutorialOff()
+    {
+        panelController.HideTutorialPanel();
+        Time.timeScale = 1f;
+    }
 }
