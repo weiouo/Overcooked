@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RecipeManagerUI : MonoBehaviour
 {
-    [SerializeField] private Transform container;
     [SerializeField] private Transform recipetemplate;
 
     private void Awake()
@@ -31,7 +30,7 @@ public class RecipeManagerUI : MonoBehaviour
 
     private void Visual()
     {
-        foreach(Transform transform in container)
+        foreach(Transform transform in this.transform)
         {
             if(transform == recipetemplate)
             {
@@ -42,7 +41,7 @@ public class RecipeManagerUI : MonoBehaviour
 
         foreach(RecipeSO recipe in ServingManager.Instance.GetWaitRecipeSOList())
         {
-            Transform recipeTransform = Instantiate(recipetemplate, container);
+            Transform recipeTransform = Instantiate(recipetemplate, this.transform);
             recipeTransform.gameObject.SetActive(true);
             recipeTransform.GetComponent<RecipeManagerSingleUI>().RecipeSOSet(recipe);
         }

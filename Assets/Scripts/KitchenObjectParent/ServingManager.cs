@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.VFX;
 
 public class ServingManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class ServingManager : MonoBehaviour
 
     [SerializeField] private RecipeSOList recipeListSO;
     [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private UnityEvent orderDelivered;
     private List<RecipeSO> waitrecipeSOList; //«Ý§¹¦¨µæ³æ
     private float generateRecipeTimer = 2f;
     private float generateRecipeMaxTimer = 5f;
@@ -78,7 +80,7 @@ public class ServingManager : MonoBehaviour
                     //Debug.Log("Player delivered the correct recipe!");
                     waitrecipeSOList.RemoveAt(i);
                     RecipeComplete?.Invoke(this, EventArgs.Empty);
-                    
+                    orderDelivered.Invoke();
                     return;
                 }
             }
