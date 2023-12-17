@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityEngine.VFX;
 
 public class ServingManager : MonoBehaviour
 {
     public event EventHandler RecipeSpawn;
     public event EventHandler RecipeComplete;
+    public event EventHandler RecipeUncomplete;
     public static ServingManager Instance { get; private set; }
 
     [SerializeField] private RecipeSOList recipeListSO;
@@ -47,7 +49,7 @@ public class ServingManager : MonoBehaviour
 
     public void ServingRecipeCorrect(Plate plate)
     {
-       // bool allwrong = true;
+        bool allwrong = true;
         for (int i = 0; i < waitrecipeSOList.Count; i++) { 
             RecipeSO recipeSO = waitrecipeSOList[i];
 
@@ -76,14 +78,20 @@ public class ServingManager : MonoBehaviour
                     {
                         title.text = "µ¥«Ý­q³æ¤¤";
                     }
-                    //allwrong = false;
+                    allwrong = false;
                     //Debug.Log("Player delivered the correct recipe!");
                     waitrecipeSOList.RemoveAt(i);
                     RecipeComplete?.Invoke(this, EventArgs.Empty);
                     orderDelivered.Invoke();
+
                     return;
                 }
             }
+        }
+
+        if (allwrong)
+        {
+            RecipeUncomplete?.Invoke(this, EventArgs.Empty);
         }
     }
 

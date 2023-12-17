@@ -8,6 +8,7 @@ public class Ingredient : KitchenObject
 {
     [SerializeField] private IngredientSO ingredientSO;
     [SerializeField] private GameObject progressUI;
+    [SerializeField] private GameObject waringPart;
     private MeshFilter ingredientMeshFilter;
     private Progress progress;
     //¤Á
@@ -70,6 +71,10 @@ public class Ingredient : KitchenObject
             progress.SwitchToWarnColor();
             needPanfried = false;
             SetMesh(ingredientSO.panfriedMeshes[1]);
+            if (panfriedTime > maxPanfriedTime + 2.5f)
+            {
+                waringPart.SetActive(true);
+            }
         }
         //¥Í
         else
