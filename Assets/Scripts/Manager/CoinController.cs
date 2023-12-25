@@ -45,5 +45,9 @@ public class CoinController : MonoBehaviour
         ordersDelivered.text = "Orders Delivered x " + orderDeliveredNum.ToString();
         ordersFailed.text = "Orders Failed x " + orderFailedNum.ToString();
         total.text = "Total : $" + coin.ToString();
+        if (coin > levelDataSO.highestScore)
+        {
+            levelDataSO.highestScore = coin;
+        }
     }
 }
