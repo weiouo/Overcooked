@@ -10,7 +10,7 @@ public class GameInput : MonoBehaviour
     public event EventHandler OnCutAction;
     public event EventHandler OnPauseAction;
 
-    private void Awake()
+    private void Start()
     {
         playerInputControl = new PlayerInputControl();
         playerInputControl.Player.Enable();

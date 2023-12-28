@@ -12,30 +12,23 @@ public class CuttingCounter : ClearCounter
     private Ingredient ingredient;
     public override void Interact(Player player)
     {
-        //��W�S�F��
         if (!HasKitchenObject())
         {
-            //���a���F�� & �ӪF��O����
             if (player.HasKitchenObject() & player.GetKitchenObject() is Ingredient)
             {
-                //�񭹧�
                 ingredient = player.GetKitchenObject() as Ingredient;
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
         }
-        //��W���F��
         else
         {
-            //���a�S�F��
             if (!player.HasKitchenObject())
             {
-                //������
                 ingredient = null;
                 this.GetKitchenObject().SetKitchenObjectParent(player);
             }
             else if (player.GetKitchenObject() is Plate && ingredient.IsComplete())
             {
-                //���L�l�˭���
                 Plate plate = player.GetKitchenObject() as Plate;
                 Ingredient ingredient = this.GetKitchenObject() as Ingredient;
                 if (plate.AddIngredient(ingredient))
