@@ -22,7 +22,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     [SerializeField] private float interactDistance = 1f;
     [SerializeField] private GameObject knife;
     [SerializeField] private GameObject particle;
-    public  Animator animator;
+    private  Animator animator;
     private Vector3 interactDir;
     private bool isWalking;
     private KitchenObject KitchenObject;
@@ -39,9 +39,9 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     }
     private void Start()
     {
+        animator = GetComponent<Animator>();
         gameInput.OnInteractAction += GameInput_OnInteractAction;
         gameInput.OnCutAction += GameInput_OnCutAction;
-        CuttingCounter.CutBool += HandleCutAnimation;
     }
     void Update()
     {
@@ -158,7 +158,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
 
     //§PÂ_Playª¬ºA
-    private void HandleCutAnimation(bool isCutting)
+    public void HandleCutAnimation(bool isCutting)
     {
         animator.SetTrigger("Cut");
         if (isCutting)

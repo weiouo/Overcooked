@@ -7,8 +7,6 @@ using System;
 
 public class CuttingCounter : ClearCounter
 {
-    public delegate void CutEventHandler(bool isCutting);
-    public static event CutEventHandler CutBool;
     private Ingredient ingredient;
     public override void Interact(Player player)
     {
@@ -52,11 +50,11 @@ public class CuttingCounter : ClearCounter
         if (ingredient != null && ingredient.CanCut())
         {
             ingredient.Cut();
-            CutBool?.Invoke(true);
+            Player.Instance.HandleCutAnimation(true);
         }
         else
         {
-            CutBool?.Invoke(false);
+            Player.Instance.HandleCutAnimation(false);
         }
     }
 }
