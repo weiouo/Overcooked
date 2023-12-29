@@ -10,14 +10,17 @@ public class InputManager : MonoBehaviour
     public void StartLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
+        Time.timeScale = 1f;
     }
     public void Map()
     {
         SceneManager.LoadScene("Map");
+        Time.timeScale = 1f;
     }
     public void Menu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
     public void Exit()
     {

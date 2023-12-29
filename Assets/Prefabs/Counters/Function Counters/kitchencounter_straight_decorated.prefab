@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 5366086370949779451}
   - component: {fileID: 2364274827230446699}
   - component: {fileID: 3193531656698699252}
-  - component: {fileID: 6646375531325163812}
+  - component: {fileID: 1027704865371184621}
   - component: {fileID: 4714590537103446123}
   m_Layer: 6
   m_Name: kitchencounter_straight_decorated
@@ -76,13 +76,13 @@ Transform:
   m_GameObject: {fileID: 2138045970179807650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6181600875990207652}
   - {fileID: 8911108298668112123}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2364274827230446699
 MeshFilter:
@@ -134,7 +134,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6646375531325163812
+--- !u!65 &1027704865371184621
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,8 +153,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0000005, y: 1.9137545, z: 2.0419035}
-  m_Center: {x: 2.9773886e-16, y: 0.95687723, z: 0.020952469}
+  m_Size: {x: 1.0000002, y: 0.58019423, z: 1.0209517}
+  m_Center: {x: 0.0000000024976141, y: 0.29009712, z: 0.010475755}
 --- !u!114 &4714590537103446123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,8 +179,6 @@ GameObject:
   - component: {fileID: 3632837260802021021}
   - component: {fileID: 3494475929630274030}
   - component: {fileID: 880860468986483273}
-  - component: {fileID: 3521093262870029534}
-  - component: {fileID: 365375848831108183}
   m_Layer: 2
   m_Name: kitchencounter_straight_decorated
   m_TagString: Untagged
@@ -253,41 +251,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3521093262870029534
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7628033818941176062}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.0000005, y: 1.9137545, z: 2.0419035}
-  m_Center: {x: 2.9773886e-16, y: 0.95687723, z: 0.020952469}
---- !u!114 &365375848831108183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7628033818941176062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18a84db15ffe934eb63330ecc490070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topPoint: {fileID: 0}
-  prefab: {fileID: 0}
 --- !u!1 &7710890640496771146
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7710890640496771146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0.26}
+  m_LocalPosition: {x: -0, y: 0.62, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

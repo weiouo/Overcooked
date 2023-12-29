@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 2763830559420758701}
   - component: {fileID: 5934438490545543365}
   - component: {fileID: 301987292640013358}
-  - component: {fileID: 3480287216374487412}
-  - component: {fileID: 3645988043327156399}
   m_Layer: 2
   m_Name: crate_steak
   m_TagString: Untagged
@@ -86,41 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3480287216374487412
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898742548124379889}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.0000002, y: 0.8769127, z: 2.0000048}
-  m_Center: {x: 0.00000011920929, y: 0.4384544, z: -0.00000017881393}
---- !u!114 &3645988043327156399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898742548124379889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18a84db15ffe934eb63330ecc490070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topPoint: {fileID: 0}
-  KichenObjectSO: {fileID: 11400000, guid: d96d054c2c267384d82a61de24cad2a7, type: 2}
 --- !u!1 &3638873777040609641
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,37 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counter: {fileID: 2343855443272281937}
   visualObject: {fileID: 898742548124379889}
---- !u!1 &5019877680757127280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1505213370336228544}
-  m_Layer: 6
-  m_Name: steak_countertop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1505213370336228544
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019877680757127280}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7507621829115720466}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7807186445687308244
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +173,7 @@ GameObject:
   - component: {fileID: 7507621829115720466}
   - component: {fileID: 4479632352333420710}
   - component: {fileID: 5479013676966981415}
-  - component: {fileID: 7717147061940887523}
+  - component: {fileID: 2609510744772283004}
   - component: {fileID: 2343855443272281937}
   m_Layer: 6
   m_Name: crate_steak
@@ -259,10 +191,9 @@ Transform:
   m_GameObject: {fileID: 7807186445687308244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1505213370336228544}
   - {fileID: 8582177759365218014}
   m_Father: {fileID: 0}
   m_RootOrder: -1
@@ -317,7 +248,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7717147061940887523
+--- !u!65 &2609510744772283004
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,8 +267,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0000002, y: 0.8769127, z: 2.0000048}
-  m_Center: {x: 0.00000011920929, y: 0.4384544, z: -0.00000017881393}
+  m_Size: {x: 1.0000001, y: 0.43845636, z: 1.0000024}
+  m_Center: {x: 0.000000059604645, y: 0.2192272, z: -0.00000008940697}
 --- !u!114 &2343855443272281937
 MonoBehaviour:
   m_ObjectHideFlags: 0

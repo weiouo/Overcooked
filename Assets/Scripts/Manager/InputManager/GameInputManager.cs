@@ -28,6 +28,7 @@ public class GameInputManager : InputManager
     public void GameRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
     public void GamePause()
     {

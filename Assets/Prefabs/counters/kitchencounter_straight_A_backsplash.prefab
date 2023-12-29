@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199172696459413608}
   m_LocalRotation: {x: -0, y: 0.00000004371139, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,8 +42,6 @@ GameObject:
   - component: {fileID: 208398373753720448}
   - component: {fileID: 1206110296996913397}
   - component: {fileID: 7295000809703089852}
-  - component: {fileID: 1006172538445581140}
-  - component: {fileID: 5555663466797063845}
   m_Layer: 2
   m_Name: kitchencounter_straight_A_backsplash
   m_TagString: Untagged
@@ -117,40 +115,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1006172538445581140
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084242159151072595}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 2, y: 1.2, z: 2.041903}
-  m_Center: {x: 0, y: 0.6, z: 0.02095151}
---- !u!114 &5555663466797063845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084242159151072595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f43fc532d00e61240bf8219a9361b300, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topPoint: {fileID: 8372263336535937520}
 --- !u!1 &4509833190132642953
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +173,7 @@ GameObject:
   - component: {fileID: 3523336233195427122}
   - component: {fileID: 2694343391282245223}
   - component: {fileID: 927729408606319213}
-  - component: {fileID: 7546883339110962839}
+  - component: {fileID: 5005894180126103842}
   - component: {fileID: 7242015273463692021}
   m_Layer: 6
   m_Name: kitchencounter_straight_A_backsplash
@@ -227,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 6576804668288694891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7067610610107888686}
@@ -285,7 +249,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7546883339110962839
+--- !u!65 &5005894180126103842
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,8 +268,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 1.2, z: 2.041903}
-  m_Center: {x: 0, y: 0.6, z: 0.02095151}
+  m_Size: {x: 1.0000002, y: 0.6, z: 1.0209517}
+  m_Center: {x: -0.00000011920929, y: 0.3, z: 0.010475996}
 --- !u!114 &7242015273463692021
 MonoBehaviour:
   m_ObjectHideFlags: 0

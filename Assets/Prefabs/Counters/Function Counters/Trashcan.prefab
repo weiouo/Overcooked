@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3327401877882547026}
   - component: {fileID: 8520444948743209629}
   - component: {fileID: 4905029259019464895}
-  - component: {fileID: 3841571008863094140}
+  - component: {fileID: 4172756991625999561}
   - component: {fileID: 6179775248624421296}
   m_Layer: 6
   m_Name: Trashcan
@@ -29,11 +29,11 @@ Transform:
   m_GameObject: {fileID: 2878907324597662941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8520444948743209629
 MeshFilter:
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3841571008863094140
+--- !u!65 &4172756991625999561
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0000007, y: 0.80000013, z: 2.0000052}
-  m_Center: {x: -0.00000011920926, y: 0.3999981, z: -0.00000065565115}
+  m_Size: {x: 1.0000001, y: 0.40000007, z: 1.0000024}
+  m_Center: {x: 0.000000059604645, y: 0.19999905, z: -0.00000008940697}
 --- !u!114 &6179775248624421296
 MonoBehaviour:
   m_ObjectHideFlags: 0
