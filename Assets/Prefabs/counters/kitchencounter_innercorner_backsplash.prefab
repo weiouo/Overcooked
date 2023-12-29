@@ -120,6 +120,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topPoint: {fileID: 0}
   prefab: {fileID: 0}
+--- !u!1 &3777471229945636304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4795536285983555952}
+  m_Layer: 0
+  m_Name: Top Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4795536285983555952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777471229945636304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8620689186018074051}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8831761596884711203
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +163,8 @@ GameObject:
   - component: {fileID: 4673789733188284015}
   - component: {fileID: 3815787045411690634}
   - component: {fileID: 4568444878092477646}
-  - component: {fileID: -2745097962734671934}
-  m_Layer: 0
+  - component: {fileID: -4540804223770328963}
+  m_Layer: 6
   m_Name: kitchencounter_innercorner_backsplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,8 +184,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2496240437380654636}
+  - {fileID: 4795536285983555952}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4673789733188284015
 MeshFilter:
@@ -227,7 +259,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1.2, z: 2}
   m_Center: {x: 0, y: 0.6, z: 0}
---- !u!114 &-2745097962734671934
+--- !u!114 &-4540804223770328963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,11 +268,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8831761596884711203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18a84db15ffe934eb63330ecc490070, type: 3}
+  m_Script: {fileID: 11500000, guid: f43fc532d00e61240bf8219a9361b300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topPoint: {fileID: 0}
-  prefab: {fileID: 0}
+  topPoint: {fileID: 4795536285983555952}
 --- !u!1 &9172136237930021342
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,5 +317,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80419a9875558a439bd29c35879a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: {fileID: -2745097962734671934}
+  counter: {fileID: -4540804223770328963}
   visualObject: {fileID: 1967553886247482903}
