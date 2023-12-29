@@ -13,7 +13,7 @@ public class InputManager : MonoBehaviour
     }
     public void Map()
     {
-
+        SceneManager.LoadScene("Map");
     }
     public void Menu()
     {
