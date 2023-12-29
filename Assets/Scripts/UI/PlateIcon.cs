@@ -33,11 +33,6 @@ public class PlateIcon : MonoBehaviour
     private void VisualIconUI()
     {
         Ingredient ingredient = plate.GetIngredient();
-        //foreach(Transform Child in transform)
-        //{
-        //   if (Child == Icon) { continue; }
-        //    Destroy(Child.gameObject);
-        //}
         Transform icontransform = Instantiate(Icon, transform);
         icontransform.gameObject.SetActive(true);
         icontransform.GetComponent<PlateIconSingle>().GetKitchenObjectIcon(ingredient.GetIngredientSO()); 
