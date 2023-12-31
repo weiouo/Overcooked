@@ -42,7 +42,7 @@ public class CuttingCounter : ClearCounter
         }
     }
 
-    public override void Cut()
+    public override void Cut(Player player)
     {
         //試圖獲取該食材
         ingredient = this.GetKitchenObject() is Ingredient ? this.GetKitchenObject() as Ingredient : null;
@@ -50,11 +50,11 @@ public class CuttingCounter : ClearCounter
         if (ingredient != null && ingredient.CanCut())
         {
             ingredient.Cut();
-            Player.Instance.HandleCutAnimation(true);
+            player.HandleCutAnimation(true);
         }
         else
         {
-            Player.Instance.HandleCutAnimation(false);
+            player.HandleCutAnimation(false);
         }
     }
 }
