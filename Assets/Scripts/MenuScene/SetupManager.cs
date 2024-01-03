@@ -7,7 +7,7 @@ public class SetupManager : MonoBehaviour
     [SerializeField] private GameObject player2;
 
     [SerializeField] private GameObject addPlayerText;
-    [SerializeField] private GameObject pressKeyToStartText;
+    [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject startCamera;
     private bool isGameStart;
     private void Start()
@@ -23,7 +23,7 @@ public class SetupManager : MonoBehaviour
             isGameStart = true;
             startCamera.GetComponent<Animation>().Play();
             addPlayerText.SetActive(false);
-            pressKeyToStartText.SetActive(false);
+            startPanel.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Q) && !isGameStart)
         {
