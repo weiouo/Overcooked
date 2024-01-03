@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SubCameraController : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
+    [SerializeField] GameObject Player1;
     private Vector3 offset;
     private void Start()
     {
@@ -12,6 +12,6 @@ public class SubCameraController : MonoBehaviour
     }
     private void Update()
     {
-        this.transform.position = new Vector3(Player.transform.position.x, offset.y, Player.transform.position.z + offset.z);
+        this.transform.position = new Vector3(Player1.transform.position.x, offset.y, Player1.transform.position.z + offset.z);
     }
 }

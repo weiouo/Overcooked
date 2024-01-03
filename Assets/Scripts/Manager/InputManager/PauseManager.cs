@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CompleteGameInputManager : GameInputManager
+public class PauseManager : GameInputManager
 {
     private void Update()
     {
