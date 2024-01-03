@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using System;
 
 public class Player : MonoBehaviour, IKitchenObjectParent
@@ -13,7 +11,6 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     [SerializeField] private float interactDistance = 1f;
     [SerializeField] private GameObject knife;
     [SerializeField] private GameObject particle;
-    [SerializeField] private UnityEvent m_PauseEvent;
     private  Animator animator;
 
     private float horizontalInput;
@@ -57,11 +54,6 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         if (Input.GetButtonDown("Cut_" + playerID))
         {
             PlayerCut();
-        }
-        //¼È°±
-        if (Input.GetButtonDown("esc_" + playerID))
-        {
-            m_PauseEvent.Invoke();
         }
         //°Êµe
         HandleWalkAnimation();

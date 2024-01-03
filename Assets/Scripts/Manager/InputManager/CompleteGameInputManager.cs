@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class CompleteGameInputManager : GameInputManager
 {
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            OnPauseAction();
+        }
+    }
     public override void Start()
     {
         base.Start();
         GameInitialize();
     }
-    public void OnPauseAction()
+    private void OnPauseAction()
     {
         if (Time.timeScale == 0f)
             GameResume();
