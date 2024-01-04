@@ -3,15 +3,17 @@ using System;
 
 public class Player : MonoBehaviour, IKitchenObjectParent
 {
+    [Header("玩家編號")]
     [SerializeField] private string playerID;
-    [SerializeField] private LayerMask counterLayerMask;
-    [SerializeField] private Transform holdPoint;
+    [Header("可調變數")]
     [SerializeField] private float moveSpeed = 7.0f;
     [SerializeField] private float rotate_speed = 25.0f;
     [SerializeField] private float interactDistance = 1f;
+    [Header("設定變數")]
+    [SerializeField] private LayerMask counterLayerMask;
+    [SerializeField] private Transform holdPoint;
     [SerializeField] private GameObject knife;
     [SerializeField] private GameObject particle;
-    private  Animator animator;
 
     private float horizontalInput;
     private float verticalInput;
@@ -20,8 +22,9 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     private Vector3 interactDir;
     private bool isWalking;
 
+    private  Animator animator;
     private KitchenObject KitchenObject;
-    public BaseCounter SelectedCounter;
+    private BaseCounter SelectedCounter;
 
     private void Start()
     {
@@ -59,7 +62,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         HandleWalkAnimation();
         HandleGetThingAnimation();
     }
-    //移動
+    //處理方向
     private Vector2 GetMovementVectorNormalized()
     {
         Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
@@ -67,6 +70,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         isWalking =inputVector != Vector2.zero;
         return inputVector;
     }
+    //按wasd執行Movement
     private void PlayerMovement()
     {
         transform.position += moveDir * moveSpeed * Time.deltaTime;
@@ -146,13 +150,13 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         return this.KitchenObject != null;
     }
 
-
     //Animation
     public void HandleCutAnimation(bool isCutting)
     {
-        animator.SetTrigger("Cut");
-        if (isCutting)
+        if (isCutting) {
+            animator.SetTrigger("Cut");
             knife.SetActive(true);
+        }
         else
             knife.SetActive(false);
     }
