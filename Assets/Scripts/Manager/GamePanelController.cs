@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PanelController : MonoBehaviour
+public class GamePanelController : MonoBehaviour
 {
     [SerializeField] private GameObject readyGoPanel;
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject timesUpPanel;
     [SerializeField] private GameObject endPanel;
-    [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject tutorialPanel;
     [SerializeField] private UnityEvent setupEndPanel;
     public void ShowReadyGoPanel()
@@ -32,14 +31,6 @@ public class PanelController : MonoBehaviour
         endPanel.SetActive(true);
         setupEndPanel.Invoke();
     }
-    public void ShowPausePanel()
-    {
-        pausePanel.SetActive(true);
-    }
-    public void HidePausePanel()
-    {
-        pausePanel.SetActive(false) ;
-    }
     public void HideTutorialPanel()
     {
         tutorialPanel.SetActive(false);
@@ -53,7 +44,6 @@ public class PanelController : MonoBehaviour
         readyGoPanel.SetActive(false);
         gamePanel.SetActive(false);
         endPanel.SetActive(false);
-        pausePanel.SetActive(false);
         tutorialPanel.SetActive(false);
     }
 }

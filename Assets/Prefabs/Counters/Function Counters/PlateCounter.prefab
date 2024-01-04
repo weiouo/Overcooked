@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPoint: {fileID: 5754363849775282538}
+  visualObject: {fileID: 80267714058454176}
   prefab: {fileID: 7715372490908604846, guid: 7e1bbd6bfc533274d9e006f220941124, type: 3}
   plateCount: 3
   generateTime: 5

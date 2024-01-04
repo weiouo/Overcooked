@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseManager : GameInputManager
+public class PauseManager : MonoBehaviour
 {
+    [SerializeField] private GameObject PausePanel;
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -11,16 +12,17 @@ public class PauseManager : GameInputManager
             OnPauseAction();
         }
     }
-    public override void Start()
-    {
-        base.Start();
-        GameInitialize();
-    }
     private void OnPauseAction()
     {
         if (Time.timeScale == 0f)
-            GameResume();
+        {
+            PausePanel.SetActive(false);
+            Time.timeScale = 1f;
+        }
         else
-            GamePause();
+        {
+            PausePanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }

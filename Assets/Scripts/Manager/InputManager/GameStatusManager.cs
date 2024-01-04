@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameInputManager : InputManager
+public class GameStatusManager : MonoBehaviour
 {
-    [SerializeField] private PanelController panelController;
+    [SerializeField] private GamePanelController panelController;
+    private void Start()
+    {
+        GameInitialize();
+    }
     public void GameInitialize()
     {
         panelController.ShowReadyGoPanel();
@@ -28,16 +30,6 @@ public class GameInputManager : InputManager
     public void GameRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1f;
-    }
-    public void GamePause()
-    {
-        panelController.ShowPausePanel();
-        Time.timeScale = 0f;
-    }
-    public void GameResume()
-    {
-        panelController.HidePausePanel();
         Time.timeScale = 1f;
     }
     public void GameTutorialOn()
