@@ -26,8 +26,11 @@ public class Dishrack : BaseCounter
     private void GeneratePlateVisual(int index)
     {
         Transform startPoint = GetPoint();
-        Vector3 offset = new Vector3(-0.25f * index, 0, 0);
-        plate = Instantiate(prefab, startPoint.position + offset, Quaternion.Euler(0, 0, 90));
+        Vector3 offset = new Vector3(0, 0, 0.2f * index);
+        plate = Instantiate(prefab, transform);
+        plate.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+        plate.transform.localPosition =  startPoint.localPosition + offset;
+        plate.transform.localRotation = Quaternion.Euler(90, 0, 0);
         plates.Add(plate);
         plateIndex++;
     }
