@@ -17,6 +17,7 @@ public class PauseEventManager : MonoBehaviour
     public void Help()
     {
         HelpPanel.SetActive(true);
+        gameObject.SetActive(false);
     }
     public void Exit()
     {
