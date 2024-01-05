@@ -1,5 +1,18 @@
 # Overcooked
 ---
+### Enviroment
+- Unity Hub
+---
+### 遊玩機制
+- 新增玩家: Q
+- 移動:WASD(1P) 上下左右(2P)
+- 與物件互動:E (1P) right shift(2P)
+- 切食材:F (1P) right ctrl (2P)
+- 暫停選單:ESC
+---
+### 遊戲規則
+- 玩家操縱角色進行烹調，隨著時間倒數下玩家感受到手忙腳亂，即使匆忙也要盡可能做出最多漢堡吧!
+---
 ### 廚房物件(可以拿起來的)
 #### KitchenObject 
 - KitchenObject(定義大物件)
