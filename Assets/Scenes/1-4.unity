@@ -1461,7 +1461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999758744546485294, guid: 64781960883ae074082a571fe68475da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.75
       objectReference: {fileID: 0}
     - target: {fileID: 6999758744546485294, guid: 64781960883ae074082a571fe68475da, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1469,7 +1469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999758744546485294, guid: 64781960883ae074082a571fe68475da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 6999758744546485294, guid: 64781960883ae074082a571fe68475da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3425,7 +3425,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9056604, g: 0.75114185, b: 0.54254186, a: 1}
+  m_Color: {r: 0.4716981, g: 0.3713054, b: 0.23362406, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -7577,7 +7577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 216180475338126152, guid: d9ebea77f6e499643a529144c10b29b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 216180475338126152, guid: d9ebea77f6e499643a529144c10b29b7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7585,7 +7585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 216180475338126152, guid: d9ebea77f6e499643a529144c10b29b7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3.6
       objectReference: {fileID: 0}
     - target: {fileID: 216180475338126152, guid: d9ebea77f6e499643a529144c10b29b7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9771,6 +9771,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 555753860352017559, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 51146688e19a44b4b87046044249bb04, type: 3}
     - target: {fileID: 4064329295545099458, guid: 9974d02c464cab04699a921862135541, type: 3}
       propertyPath: levelDataSO
       value: 

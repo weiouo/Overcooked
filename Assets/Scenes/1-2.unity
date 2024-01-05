@@ -3891,7 +3891,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.6792453, g: 0.56124896, b: 0.24029905, a: 1}
+  m_Color: {r: 0.49056602, g: 0.4341625, b: 0.27999285, a: 1}
   m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
@@ -10876,14 +10876,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 555753860352017559, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 74c8b10be17dc964db49d40a39ddc45c, type: 3}
+    - target: {fileID: 1763739468278756788, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763739468278756788, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763739468278756788, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763739468278756788, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4064329295545099458, guid: 9974d02c464cab04699a921862135541, type: 3}
       propertyPath: levelDataSO
       value: 
       objectReference: {fileID: 11400000, guid: d7b2b16b75022d64cbf3d12422ac2ba8, type: 2}
+    - target: {fileID: 4090977732604853062, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090977732604853062, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090977732604853062, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090977732604853062, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5086272838619128682, guid: 9974d02c464cab04699a921862135541, type: 3}
       propertyPath: levelDataSO
       value: 
       objectReference: {fileID: 11400000, guid: d7b2b16b75022d64cbf3d12422ac2ba8, type: 2}
+    - target: {fileID: 5765986608163067036, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765986608163067036, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765986608163067036, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765986608163067036, guid: 9974d02c464cab04699a921862135541, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6300923421896481567, guid: 9974d02c464cab04699a921862135541, type: 3}
       propertyPath: m_Name
       value: Canvas
